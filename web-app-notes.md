@@ -27,10 +27,10 @@ Under the ```(GET "/" ...``` line, add a new route like this:
 
 If you save the file, you'll get an error in your console because Clojure doesn't know what Hiccup is yet. We'll need to add hiccup to our ```project.clj``` file and require it in ```handler.clj```.
 ```clojure
-# add this to the ```:dependencies``` section of project.clj
+; add this to the ```:dependencies``` section of project.clj
 [hiccup "1.0.5"]
 
-# add this to the ```:require``` section at the top of handler.clj
+; add this to the ```:require``` section at the top of handler.clj
 [hiccup.page :as page]
 ```
 
@@ -147,7 +147,7 @@ submit the page.
 
 First, add an atom so we can store our messages somewhere.
 ```clojure
-# above the chat function
+; above the chat function
 (def messages (atom []))
 ```
 

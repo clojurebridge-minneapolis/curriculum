@@ -5,6 +5,7 @@
 
 ```bash
 lein new compojure chat
+lein ring server
 ```
 
 
@@ -16,6 +17,8 @@ Change the ```(GET "/" ...``` line to say hello to yourself
 ```
 
 View your page at http://localhost:3000/
+
+[commit](https://github.com/clojurebridge-minneapolis/chat/commit/68695029d7933fc0272b4cd5d541ff9473db340b)
 
 
 ## Write some html with Hiccup
@@ -35,6 +38,8 @@ If you save the file, you'll get an error in your console because Clojure doesn'
 ```
 
 View your page at http://localhost:3000/
+
+[commit](https://github.com/clojurebridge-minneapolis/chat/commit/a5eb7cb2c6753cda053c716bc740fe6fdce5f9de)
 
 
 ## Add a form
@@ -68,6 +73,8 @@ View your page at http://localhost:3000/who. If you submit the form, you'll get 
 (GET "/iam" {params :params} (iam params))
 ```
 
+[commit](https://github.com/clojurebridge-minneapolis/chat/commit/fda95cd021e832f8230d7eded8240488fb80d89f)
+
 
 ## Add some flow control
 
@@ -83,6 +90,8 @@ View your page at http://localhost:3000/who. If you submit the form, you'll get 
       (when (> (count (:name params)) 7)
           [:li "You should consider a nickname."])]]))
 ```
+
+[commit](https://github.com/clojurebridge-minneapolis/chat/commit/705227c000454f18c0f1ac7bba79bcf7f71e627a)
 
 
 ## Simplify things with ```let```
@@ -102,6 +111,8 @@ That's nice, but we've written ```(:name params)``` a lot. Change the function t
             [:li "You should consider a nickname."])]])))
 ```
 
+[commit](https://github.com/clojurebridge-minneapolis/chat/commit/4bf28482e4b6c72bba1c6b635a1e30b2fd9f9879)
+
 
 ## Maps
 
@@ -120,6 +131,8 @@ We can look at our params map by printing it out. Change the ```iam``` function 
         (when (> (count name) 7)
             [:li "You should consider a nickname."])]])))
 ```
+
+[commit](https://github.com/clojurebridge-minneapolis/chat/commit/9dcfa8cf5577c6fa65d7f8141d7788a5e56d1add)
 
 
 ## Post a name and message
@@ -142,6 +155,8 @@ We can look at our params map by printing it out. Change the ```iam``` function 
 View your app and submit a name and a message. Notice that the name is still there when you
 submit the page.
 
+[commit](https://github.com/clojurebridge-minneapolis/chat/commit/0af9ad31c50d8bd8552df759ec6dfdba35b7dbb7)
+
 
 ## Store and display messages
 
@@ -163,6 +178,8 @@ Next, update our messages atom and print them out
 ```
 
 Try using your app to chat with someone
+
+[commit](https://github.com/clojurebridge-minneapolis/chat/commit/7350384b5f97dc618a4e81a175e8bfaf12c629e1)
 
 
 ## Make it pretty by adding Bootstrap
@@ -194,3 +211,5 @@ Add some code to make Bootstrap work
 (def app
   (handler/site (wrap-bootstrap-resources app-routes)))
 ```
+
+[commit](https://github.com/clojurebridge-minneapolis/chat/commit/a518836ff9b7e0016d006051fd88dd707ffcdbe7)

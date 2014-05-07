@@ -13,7 +13,7 @@
 
 
 ## Outline
-* Setup Night: [Getting Set Up](outline/setup.md)
+* [Getting Set Up](outline/setup.md)
 * Have coffee/water/breakfast, mingle
 * Go around the room, everyone introduce yourselves
   * How did you hear about this?

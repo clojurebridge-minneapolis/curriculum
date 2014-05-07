@@ -14,8 +14,8 @@
      :theme "mozilla-theme.css"
      (intro
       :title "ClojureBridge"
-      (p "San Francisco, CA")
-      (p "May 3, 2014"))
+      (p "Minneapolis, MN")
+      (p "May 17, 2014"))
      (slide
       :title "Table of Contents"
       (ul

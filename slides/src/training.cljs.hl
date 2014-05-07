@@ -9,8 +9,7 @@
      :theme "mozilla-theme.css"
      (intro
       :title "ClojureBridge Teacher Training"
-      (p "Durham, NC")
-      (p "March 18, 2014"))
+      (p "Minneapolis, MN"))
      (slide
       :title "Agenda"
       (quicklist

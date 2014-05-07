@@ -19,14 +19,20 @@
   * How did you hear about this?
   * why are you here?
   * why is this important to you?
-* [create chat app](web-app-notes.md#set-up-your-app)
-* Introduction to Programming with Clojure ([slides](https://clojurebridge-minneapolis.github.io/slides/module1.html#/), [walk-through](outline/intro.md), [in depth](), lightening talk)
-* More Simple Values ([slides](https://clojurebridge-minneapolis.github.io/slides/module4.html), [chat](web-app-notes.md#say-hello-to-yourself), [walk-through](outline/simple_values2.md), [in depth](), lightening talk)
-* Data Structures ([slides](https://clojurebridge-minneapolis.github.io/slides/module2.html), [chat](web-app-notes.md#write-some-html-with-hiccup), [walk-through](outline/data_structures.md), [in depth](), lightening talk)
-* Functions ([slides](https://clojurebridge-minneapolis.github.io/slides/module3.html), [chat](web-app-notes.md#add-a-form), [walk-through](outline/functions.md), [in depth](), lightening talk)
-* Flow Control ([slides](https://clojurebridge-minneapolis.github.io/slides/module7.html), chat [1](web-app-notes.md#add-some-flow-control) [2](web-app-notes.md#simplify-things-with-let), [walk-through](outline/flow_control.md), [in depth](), lightening talk)
-* More Data Structures ([slides](https://clojurebridge-minneapolis.github.io/slides/module6.html), chat [1](web-app-notes.md#maps) [2](web-app-notes.md#post-a-name-and-message), [walk-through](outline/data_structures2.md), [in depth](), lightening talk)
-* More Functions ([slides](https://clojurebridge-minneapolis.github.io/slides/module5.html), chat [1](web-app-notes.md#store-and-display-messages) [2](web-app-notes.md#make-it-pretty-by-adding-bootstrap), [walk-through](outline/functions2.md), [in depth](), lightening talk)
+* Introduction to Programming with Clojure ([slides](https://clojurebridge-minneapolis.github.io/slides/module1.html#/), [chat](web-app-notes.md#set-up-your-app), [walk-through](outline/intro.md), lightening talk)
+  * Advanced: [community docs](https://clojurebridge.github.io/community-docs/index.html): comment, types, assignment def
+* More Simple Values ([slides](https://clojurebridge-minneapolis.github.io/slides/module4.html), [chat](web-app-notes.md#say-hello-to-yourself), [walk-through](outline/simple_values2.md), lightening talk)
+  * Advanced: [community docs](https://clojurebridge.github.io/community-docs/index.html): string, truthiness
+* Data Structures ([slides](https://clojurebridge-minneapolis.github.io/slides/module2.html), [chat](web-app-notes.md#write-some-html-with-hiccup), [walk-through](outline/data_structures.md), lightening talk)
+  * Advanced: [community docs](https://clojurebridge.github.io/community-docs/index.html): data structure vector, data structure list
+* Functions ([slides](https://clojurebridge-minneapolis.github.io/slides/module3.html), [chat](web-app-notes.md#add-a-form), [walk-through](outline/functions.md), lightening talk)
+  * Advanced: [community docs](https://clojurebridge.github.io/community-docs/index.html): basics of function, core function map, core function reduce
+* Flow Control ([slides](https://clojurebridge-minneapolis.github.io/slides/module7.html), [chat 1](web-app-notes.md#add-some-flow-control), [chat 2](web-app-notes.md#simplify-things-with-let), [walk-through](outline/flow_control.md), lightening talk)
+  * Advanced: [community docs](https://clojurebridge.github.io/community-docs/index.html): conditional if, conditional cond, conditional case, assignment let, function with let/destructuring
+* More Data Structures ([slides](https://clojurebridge-minneapolis.github.io/slides/module6.html), [chat 1](web-app-notes.md#maps), [chat 2](web-app-notes.md#post-a-name-and-message), [walk-through](outline/data_structures2.md), lightening talk)
+  * Advanced: [community docs](https://clojurebridge.github.io/community-docs/index.html): data structure map, data structure lazy-seq, data structure set
+* More Functions ([slides](https://clojurebridge-minneapolis.github.io/slides/module5.html), [chat 1](web-app-notes.md#store-and-display-messages), [chat 2](web-app-notes.md#make-it-pretty-by-adding-bootstrap), [walk-through](outline/functions2.md), lightening talk)
+  * Advanced: [community docs](https://clojurebridge.github.io/community-docs/index.html): anonymous function, higher-order function, filter, remove, range, iterate, drop, take, 
 
 
 ## Global Growth App

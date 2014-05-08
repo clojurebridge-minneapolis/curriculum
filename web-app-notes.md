@@ -5,6 +5,7 @@
 
 ```bash
 lein new compojure chat
+cd chat
 lein ring server
 ```
 
@@ -28,7 +29,7 @@ Under the ```(GET "/" ...``` line, add a new route like this:
   (GET "/hello2" [] (page/html5 [:div "Hello from " [:b "hiccup"] "!"]))
 ```
 
-If you save the file, you'll get an error in your console because Clojure doesn't know what Hiccup is yet. We'll need to add hiccup to our ```project.clj``` file and require it in ```handler.clj```.
+If you save the file, you'll get an error in your console because Clojure doesn't know what Hiccup is yet. We'll need to add hiccup to our ```project.clj``` file and require it in ```src/chat/handler.clj```.
 ```clojure
 ; add this to the ```:dependencies``` section of project.clj
 [hiccup "1.0.5"]
@@ -58,7 +59,8 @@ Add a new route for rendering a form that calls a function to make the page
                   [:label "Who are you?"]
                   (form/text-field "name")
                   (form/submit-button "Submit"))))
-; add a route
+
+; add a route to the defroutes section
 (GET "/who" [] (who))
 ```
 

@@ -141,7 +141,7 @@ We can look at our params map by printing it out. Change the ```iam``` function 
 
 ```clojure
 ; change our default route to this
-(ANY "/" {params :params} (chat (:name params) (:msg params))
+(ANY "/" {params :params} (chat (:name params) (:msg params)))
 
 ; add a chat function
 ```clojure

@@ -44,6 +44,8 @@ Now let's go ahead and actually run this project. Enter this at the command line
 
 ## Say hello to yourself
 
+Open up your Chat application in LightTable. In LightTable open ```chat/src/chat.handler.clj```.
+
 Change the ```(GET "/" ...``` line to say hello to yourself
 ```clojure
   (GET "/" [] "Hello YourName!")

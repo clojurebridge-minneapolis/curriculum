@@ -180,7 +180,6 @@ We can look at our params map by printing it out. Change the ```iam``` function 
 ; add a chat function
 (defn chat [name msg]
   (page/html5
-   ;(map (fn [message] [:div [:strong (first message)] " " (second message)]) @messages)
    (form/form-to
     [:post "/"]
     [:div "Name:" (form/text-field "name" name) " Message:" (form/text-field "msg")]
@@ -223,6 +222,7 @@ Add Bootstrap to our project by adding this dependency in your ```project.clj```
 ```clojure
 [hiccup.bootstrap.page :as boot]
 ```
+Because we've changed our ```project.clj``` file, you'll need to restart your server (press ```ctrl-c```` to stop it and then run the same command you ran before to start it again)
 
 Add some code to make Bootstrap work in your ```src/chat/handler.clj``` file:
 ```clojure

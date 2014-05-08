@@ -67,7 +67,10 @@ If you save the file, you'll get an error in your console because Clojure doesn'
 ```clojure
 ; add this to the ```:dependencies``` section of project.clj
 [hiccup "1.0.5"]
+```
+Because we've changed our ```project.clj``` file, you'll need to restart your server (press ```ctrl-c``` to stop it and then run the same command you ran before to start it again)
 
+```clojure
 ; add this to the ```:require``` section at the top of handler.clj
 [hiccup.page :as page]
 ```
@@ -222,7 +225,7 @@ Add Bootstrap to our project by adding this dependency in your ```project.clj```
 ```clojure
 [hiccup-bootstrap "0.1.2"]
 ```
-Because we've changed our ```project.clj``` file, you'll need to restart your server (press ```ctrl-c```` to stop it and then run the same command you ran before to start it again)
+Don't forget to restart your server after making a change to ```project.clj```.
 
 Add some code to make Bootstrap work in your ```src/chat/handler.clj``` file:
 ```clojure

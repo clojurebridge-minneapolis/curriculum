@@ -224,10 +224,10 @@ Add Bootstrap to our project by adding this dependency in your ```project.clj```
 [hiccup.bootstrap.page :as boot]
 ```
 
-Add some code to make Bootstrap work
+Add some code to make Bootstrap work in your ```src/chat/handler.clj``` file:
 ```clojure
 ; require Bootstrap at the top after the hiccup.form line
-[hiccup.bootstrap.page :as boot]
+[hiccup-bootstrap "0.1.2"]
 
 ; modify our chat function to use Bootstrap
 (defn chat [name msg]

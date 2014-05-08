@@ -220,11 +220,13 @@ Try using your app to chat with someone
 
 Add Bootstrap to our project by adding this dependency in your ```project.clj``` file:
 ```clojure
-[hiccup.bootstrap.page :as boot]
+[hiccup-bootstrap "0.1.2"]
 ```
 
 Add some code to make Bootstrap work
 ```clojure
+; use Bootstrap middleware at the top after the compojure.core line
+[hiccup.bootstrap.middleware]
 ; require Bootstrap at the top after the hiccup.form line
 [hiccup.bootstrap.page :as boot]
 
@@ -240,6 +242,8 @@ Add some code to make Bootstrap work
     [:div.well
      (map ...)] ; the code inside the 'map' call should remain unchanged
   ; leave the rest of the function the same
+  (form/submit-button "Submit"))]]))
+
 
 ; add the Bootstrap specific routes by wrapping our routes with them
 (def app

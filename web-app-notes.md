@@ -72,7 +72,7 @@ View your page at http://localhost:3000/who. If you submit the form, you'll get 
     [:div "You are " (:name params) "!"]))
 
 ; add a route to handle the request
-(GET "/iam" {params :params} (iam params))
+(POST "/iam" {params :params} (iam params))
 ```
 
 [commit](https://github.com/clojurebridge-minneapolis/chat/commit/fda95cd021e832f8230d7eded8240488fb80d89f)

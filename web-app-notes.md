@@ -229,10 +229,8 @@ Don't forget to restart your server after making a change to ```project.clj```.
 
 Add some code to make Bootstrap work in your ```src/chat/handler.clj``` file:
 ```clojure
-; use Bootstrap middleware at the top after the compojure.core line
-[hiccup.bootstrap.middleware]
-; require Bootstrap at the top after the hiccup.form line
-[hiccup-bootstrap "0.1.2"]
+; use Bootstrap middleware at the top after the hiccup.form line
+[hiccup.bootstrap.middleware :as middleware]
 
 ; modify our chat function to use Bootstrap
 (defn chat [name msg]
@@ -252,7 +250,7 @@ Add some code to make Bootstrap work in your ```src/chat/handler.clj``` file:
 
 ; add the Bootstrap specific routes by wrapping our routes with them
 (def app
-  (handler/site (wrap-bootstrap-resources app-routes)))
+  (handler/site (middleware/wrap-bootstrap-resources app-routes)))
 ```
 
 [commit](https://github.com/clojurebridge-minneapolis/chat/commit/a518836ff9b7e0016d006051fd88dd707ffcdbe7)

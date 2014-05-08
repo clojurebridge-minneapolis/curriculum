@@ -67,7 +67,10 @@ If you save the file, you'll get an error in your console because Clojure doesn'
 ```clojure
 ; add this to the ```:dependencies``` section of project.clj
 [hiccup "1.0.5"]
+```
+Because we've changed our ```project.clj``` file, you'll need to restart your server (press ```ctrl-c``` to stop it and then run the same command you ran before to start it again)
 
+```clojure
 ; add this to the ```:require``` section at the top of handler.clj
 [hiccup.page :as page]
 ```
@@ -224,33 +227,32 @@ Add Bootstrap to our project by adding this dependency in your ```project.clj```
 ```clojure
 [hiccup-bootstrap "0.1.2"]
 ```
-Because we've changed our ```project.clj``` file, you'll need to restart your server (press ```ctrl-c```` to stop it and then run the same command you ran before to start it again)
+Don't forget to restart your server after making a change to ```project.clj```.
 
 Add some code to make Bootstrap work in your ```src/chat/handler.clj``` file:
 ```clojure
-; use Bootstrap middleware at the top after the compojure.core line
-[hiccup.bootstrap.middleware]
-; require Bootstrap at the top after the hiccup.form line
-[hiccup-bootstrap "0.1.2"]
+; use Bootstrap middleware at the top after the hiccup.form line
+[hiccup.bootstrap.middleware :as middleware]
 
 ; modify our chat function to use Bootstrap
 (defn chat [name msg]
-  ; leave this part the same
+  (when-not (empty? msg)
+    (swap! messages conj [name msg]))
   (page/html5
-   [:head
-    [:title "Chat"]
-    (boot/include-bootstrap)]
-   [:body
-    [:h1 "Chat"]
-    [:div.well
-     (map ...)] ; the code inside the 'map' call should remain unchanged
-  ; leave the rest of the function the same
-  (form/submit-button "Submit"))]]))
-
+   [:head                         ;added
+    [:title "Chat"]                         ;added
+    (boot/include-bootstrap)]               ;added
+   [:body                                   ;added
+     [:h1 "Chat"]                           ;added
+     (map (fn [message] [:div [:strong (first message)] " " (second message)]) @messages)
+     (form/form-to
+      [:post "/"]
+      [:div "Name:" (form/text-field "name" name) " Message:" (form/text-field "msg")]
+      (form/submit-button "Submit"))]))     ;changed
 
 ; add the Bootstrap specific routes by wrapping our routes with them
 (def app
-  (handler/site (wrap-bootstrap-resources app-routes)))
+  (handler/site (middleware/wrap-bootstrap-resources app-routes)))
 ```
 
 [commit](https://github.com/clojurebridge-minneapolis/chat/commit/a518836ff9b7e0016d006051fd88dd707ffcdbe7)

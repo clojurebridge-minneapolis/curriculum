@@ -176,7 +176,6 @@ We can look at our params map by printing it out. Change the ```iam``` function 
 (ANY "/" {params :params} (chat (:name params) (:msg params)))
 
 ; add a chat function
-```clojure
 (defn chat [name msg]
   (page/html5
    ;(map (fn [message] [:div [:strong (first message)] " " (second message)]) @messages)

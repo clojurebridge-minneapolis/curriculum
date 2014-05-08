@@ -1,12 +1,12 @@
 OS X Setup
 ==========
 
-* Start a terminal
-* Make sure Java is installed
-* Get Leiningen installed
-* Get Light Table installed
-* Get Heroku installed (includes Git)
-* Test installation
+* [Start a terminal](https://github.com/clojurebridge-minneapolis/curriculum/blob/mpls-2014-05/outline/setup_osx.md#starting-a-terminal)
+* [Make sure Java is installed](https://github.com/clojurebridge-minneapolis/curriculum/blob/mpls-2014-05/outline/setup_osx.md#making-sure-java-is-installed)
+* [Get Leiningen installed](https://github.com/clojurebridge-minneapolis/curriculum/blob/mpls-2014-05/outline/setup_osx.md#installing-leiningen)
+* [Get Light Table installed](https://github.com/clojurebridge-minneapolis/curriculum/blob/mpls-2014-05/outline/setup_osx.md#installing-light-table)
+* [Get Heroku installed (includes Git)](https://github.com/clojurebridge-minneapolis/curriculum/blob/mpls-2014-05/outline/setup_osx.md#getting-setup-with-heroku)
+* [Test installation](https://github.com/clojurebridge-minneapolis/curriculum/blob/mpls-2014-05/outline/setup_osx.md#testing-your-setup)
 
 ## Starting a terminal
 

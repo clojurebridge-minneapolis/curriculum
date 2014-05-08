@@ -10,6 +10,38 @@ lein ring server
 ```
 
 
+This should create a directory structure that looks like this:
+
+```
+| .gitignore
+| project.clj
+| resources
+| | public
+| README.md
+| target
+| src
+| | chat
+| | | handler.clj
+| test
+| | chat
+| | | test
+| | | | handler.clj
+```
+
+There's nothing inherently special or Clojure-y about this project skeleton. It's just a convention used by Leiningen. You'll be using Leiningen to build and run Clojure apps, and Leiningen expects your app to be laid out this way. Here's the function of each part of the skeleton:
+
+- `project.clj` is a configuration file for Leiningen. It helps
+  Leiningen answer questions like, "What dependencies does this
+  project have?" and "When this Clojure program runs, what function
+  should get executed first?"
+- `src/chat/handler.clj` is where we'll be doing our
+  Clojure coding for awhile.
+- The `test` directory contains tests, which we won't be covering.
+- `resources` is a place for you to store assets like images; we won't
+  be using it today.
+
+Now let's go ahead and actually run this project. Enter this at the command line:
+
 ## Say hello to yourself
 
 Change the ```(GET "/" ...``` line to say hello to yourself

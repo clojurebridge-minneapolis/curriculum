@@ -140,7 +140,7 @@ We can look at our params map by printing it out. Change the ```iam``` function 
 ## Post a name and message
 
 ```clojure
-; change our default route to this
+; change our default route to this (be sure to not leave the old version around - it will cause problems)
 (ANY "/" {params :params} (chat (:name params) (:msg params)))
 
 ; add a chat function

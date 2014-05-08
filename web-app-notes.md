@@ -71,6 +71,8 @@ If you save the file, you'll get an error in your console because Clojure doesn'
 ; add this to the ```:require``` section at the top of handler.clj
 [hiccup.page :as page]
 ```
+![diff](img/project_hiccup_dependencies.png)
+![diff](img/handler_require.png)
 
 View your page at http://localhost:3000/
 

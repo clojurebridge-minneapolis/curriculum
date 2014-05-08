@@ -240,15 +240,15 @@ Add some code to make Bootstrap work in your ```src/chat/handler.clj``` file:
     (swap! messages conj [name msg]))
   (page/html5
    [:head                         ;added
-    [:title "Chat"]               ;added
-    (boot/include-bootstrap)]     ;added
-   [:body                         ;added
-     [:h1 "Chat"]                 ;added
+    [:title "Chat"]                         ;added
+    (boot/include-bootstrap)]               ;added
+   [:body                                   ;added
+     [:h1 "Chat"]                           ;added
      (map (fn [message] [:div [:strong (first message)] " " (second message)]) @messages)
      (form/form-to
       [:post "/"]
       [:div "Name:" (form/text-field "name" name) " Message:" (form/text-field "msg")]
-      (form/submit-button "Submit"))]))     ;change
+      (form/submit-button "Submit"))]))     ;changed
 
 ; add the Bootstrap specific routes by wrapping our routes with them
 (def app

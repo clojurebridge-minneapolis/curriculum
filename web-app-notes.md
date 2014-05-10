@@ -77,7 +77,7 @@ Because we've changed our ```project.clj``` file, you'll need to restart your se
 ![diff](img/project_hiccup_dependencies.png)
 ![diff](img/handler_require.png)
 
-View your page at http://localhost:3000/
+View your page at http://localhost:3000/hello2
 
 [commit](https://github.com/clojurebridge-minneapolis/chat/commit/a5eb7cb2c6753cda053c716bc740fe6fdce5f9de)
 

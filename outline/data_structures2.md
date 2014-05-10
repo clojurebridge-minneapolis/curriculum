@@ -111,3 +111,7 @@ First, take the map you made about yourself.
 Then, find two or three other classmates around you. Ask them their first and last name and their hometown. Make a vector of maps with their information.
 
 Lastly, add your information to their information using `conj`.
+
+### Next Step:
+Go on to [<b>Module 7:</b> More Functions](https://github.com/clojurebridge-minneapolis/curriculum/blob/master/outline/functions2.md)
+Back to [<b>Module 5:</b> Flow Control](https://github.com/clojurebridge-minneapolis/curriculum/blob/master/outline/flow_control.md)

@@ -77,3 +77,7 @@ Why would you ever do this? Anonymous functions can be very useful when we have 
   ["i" "like" "peanut" "butter" "and" "jelly"])
 ;=> "i like peanut butter and jelly"
 ```
+
+### Next Step:
+
+Back to [<b>Module 6:</b> More Data Structures](https://github.com/clojurebridge-minneapolis/curriculum/blob/master/outline/data_structures2.md)

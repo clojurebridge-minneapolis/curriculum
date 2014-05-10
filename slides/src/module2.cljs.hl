@@ -1,4 +1,4 @@
-(page "module4.html"
+(page "module2.html"
       (:require [hoplon.reveal :refer [slideshow intro bullet chapter slide
                                        notes highlight column quicklist]]
                 [tailrecursion.hoplon.reload :refer [reload-all]]))
@@ -13,7 +13,7 @@
     (slideshow
      :theme "mozilla-theme.css"
      (intro
-      :title "Module 4")
+      :title "Module 2")
      (chapter
       :title "Strings, Keywords, and Booleans" 
       (slide
@@ -46,15 +46,17 @@
         ;;}}
         ))
       (slide
-       :title "Exercise: Store the name of your hometown"
-       (p "Write the name of your hometown as a string and then assign that string to the symbol "
+       :title "Exercise: Store your name and the name of your hometown"
+       (p "Write the name of your hometown as a string and then assign " 
+          "that string to the symbol "
           (code "my-hometown")
-          "."))
+          ".")
+        (p "Assign your first name to " (code "first-name") 
+           " and your last name to " (code "last-name")))
       (slide
-       :title "Exercise: make a function to format names"
+       :title "Exercise: Format names"
        (p "The " (code "str") " function can take any number of arguments, and it "
           "concatenates them together to make a string.")
-       (p "Write a function called "
-          (code "format-name") " that takes two arguments, " (code "first-name")
-          " and " (code "last-name") ". This function should output the name "
-          "like so: Last, First."))))))
+       (p "Use " (code "str) " to format " (code "first-name") ", " (code "last-name")
+          ", and " (code "my-hometown") " like so: Last, First from Hometown."))))))
+

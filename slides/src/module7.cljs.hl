@@ -21,7 +21,7 @@
     (slideshow
      :theme "mozilla-theme.css"
      (intro
-      :title "Module 5") 
+      :title "Module 7") 
      (chapter
       :title "Function library"
       (slide
@@ -41,7 +41,7 @@
         ;;{{
         (defn vegetarian?
           [person]
-          (= :vegetarian (get person :dietary-restrictions)))
+          (= :vegetarian (:dietary-restrictions person)))
         ;;}}
         ))      
       (slide

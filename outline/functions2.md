@@ -12,15 +12,55 @@ There are some functions that are essential when using Clojure. The arithmetic f
 
 ### Comparison (boolean) functions
 
-You can use the function `=` to test the equality of two things. For example, here is a function called `vegetarian?` that determines whether a person is vegetarian or not:
+You can use the function `=` to test the equality of things.  What it means to be equal depends on what the things are:
+
+Numbers: 
+```clj
+(= 2 2)		;=> true
+(= 2 2.0)	;=> false, a long and a double
+``` 
+Strings:
+```clj
+(= "hi" "hi")	;=> true
+(= "Hi" "hi")	;=> false, caps matter
+``` 
+Sets:
+```clj
+(= #{2 3} #{3 2})	;=> true, order does not matter with sets
+(= #{"hi"} #{"Hi"})	;=> false; each element must be equal and strings need the same case to be equal
+``` 
+
+An individual thing is always equal:
+```clj
+(= 2)	;=> true
+```
+
+But asking if nothing is equal is a mistake:
+```clj
+(=)	;=> ArityException Wrong number of args (0) passed to: core$-EQ-  clojure.lang.AFn.throwArity (AFn.java:437)
+```
+
+And more than two things can be compared but they must all be equal:
+```clj
+(= 2 2 2)	;=> true
+(= 2 2 3)	;=> false
+```
+
+You can ask if things are not equal by using "not=" or wrapping an equals check in a "not":
+```clj
+(not= 2 2)	;=> false
+(not (= 2 2))	;=> false
+```
+
+For example, here is a function called `vegetarian?` that determines whether a person is vegetarian or not:
 
 ```clj
 (defn vegetarian?
   [person]
-  (= :vegetarian (get person :dietary-restrictions)))
+  (= :vegetarian (:dietary-restrictions person)))
 ```
 
-The other comparison functions are `>`, `>=`, `<`, `<=`, and `not=`, and all but the last of these are used exclusively with numbers. Like all Clojure functions, the comparison functions are used as prefixes, so they can be a little tricky. Here's some examples:
+Some other comparison functions for numbers are `>`, `>=`, `<`, and `<=`.
 
 ```clj
 (> 4 3)    ;=> true

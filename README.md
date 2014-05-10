@@ -12,8 +12,11 @@
 1. Lightening talk
 
 
-## Outline
+## Install-fest
 * [Getting Set Up](outline/setup.md)
+
+
+## Outline
 * Have coffee/water/breakfast, mingle
 * Go around the room, everyone introduce yourselves
   * How did you hear about this?

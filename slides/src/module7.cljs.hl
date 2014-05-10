@@ -1,4 +1,4 @@
-(page "module7.html"
+(page "module5.html"
       (:require [hoplon.reveal :refer [slideshow intro bullet chapter slide
                                        notes highlight column quicklist]]
                 [tailrecursion.hoplon.reload :refer [reload-all]]))
@@ -6,6 +6,10 @@
 (when (= (-> js/window .-location .-search) "?dev")
   (print "Autoreloading")
   (reload-all))
+
+(defn code-list
+  [& lst]
+  (interpose ", " (map code lst)))
 
 (defelem hlclj
   [attrs children]
@@ -17,163 +21,77 @@
     (slideshow
      :theme "mozilla-theme.css"
      (intro
-      :title "Module 7")
+      :title "Module 5") 
      (chapter
-      :title "Flow control"
+      :title "Function library"
       (slide
-       :title "Example: validating data"
-       (p "If the user's input is valid, then save their data; otherwise, show an error message.")
+       :title "Comparison functions"
        (hlclj
         ;;{{
-        (if (valid? data)
-          (save! data)
-          (error "Your data was invalid"))
+        (= 1 2)    ;=> false
+        (> 4 3)    ;=> true
+        (>= 4 5)   ;=> false
+        (< -1 1)   ;=> true
+        (<= -1 -2) ;=> false
         ;;}}
         ))
       (slide
-       :title (h3 (code "if"))
+       :title "Using comparison functions"
        (hlclj
         ;;{{
-        (if conditional-expression
-          expression-to-evaluate-when-true
-          expression-to-evaluate-when-false)
+        (defn vegetarian?
+          [person]
+          (= :vegetarian (get person :dietary-restrictions)))
         ;;}}
+        ))      
+      (slide
+       :title "String functions"
+       (hlclj
+        ;;{{
+        (str "Chocolate" ", " "strawberry" ", and " "vanilla")
+        ;;=> "Chocolate, strawberry, and vanilla"
+        ;;}}       
         ))
       (slide
-       :title (h3 (code "if") " examples")
+       :title (h3 "Using " (code "str") " with " (code "reduce"))
        (hlclj
-        ;;{{
-        (if (> 3 1)
-          "3 is greater than 1"
-          "3 is not greater than 1")
-        ;;=> "3 is greater than 1"
+        ;;{{       
+        (defn join-with-space
+          [string1 string2]
+          (str string1 " " string2))
 
-        (if (> 1 3)
-          "1 is greater than 3"
-          "1 is not greater than 3")
-        ;;=> "1 is not greater than 3"
-        ;;}}
+        (reduce join-with-space
+                ["i" "like" "peanut" "butter" "and" "jelly"])
+        ;;=> "i like peanut butter and jelly"
+        ;;}}       
         ))
       (slide
-       :title "What is truth?"
-       (p "Everything except"
-          (code "false") " or " (code "nil") "."))
-
-      (slide
-       :title "Truth examples"
+       :title (h3 "Using " (code "str") " with " (code "reduce"))
        (hlclj
         ;;{{
-        (if "anything other than nil or false is considered true"
-          "A string is considered true"
-          "A string is not considered true")
-        ;;=> "A string is considered true"
-
-        (if nil
-          "nil is considered true"
-          "nil is not considered true")
-        ;;=> "nil is not considered true"
-
-        (if (get {:a 1} :b)
-          "expressions which evaluate to nil are considered true"
-          "expressions which evaluate to nil are not considered true")
-        ;;=> "expressions which evaluate to nil are not considered true"
-        ;;}}
-        ))
-
-      (slide
-       :title "Exercise: more name formatting"
-       (p "Write a function " (code "format-name") " that takes a map "
-          "representing a user, with keys " (code ":first") ", "
-          (code ":last") ", and possibly " (code ":middle")
-          ". It should return their name as a string, like so:")
-       (hlclj
-        ;;{{
-        (format-name {:first "Margaret" :last "Atwood"})
-        ;;=> "Margaret Atwood"
+        (reduce join-with-space
+                ["i" "like" "peanut" "butter" "and" "jelly"])
+        ;;=> "i like peanut butter and jelly"
         
-        (format-name {:first "Ursula" :last "Le Guin" :middle "K."})
-        ;;=> "Ursula K. Le Guin"
+        (join-with-space "i" "like")
+        (join-with-space "i like" "peanut")
+        (join-with-space "i like peanut" "butter")
+        (join-with-space "i like peanut butter" "and")
+        (join-with-space "i like peanut butter and" "jelly")
         ;;}}
         ))
       (slide
-       :title "BONUS: Flexible name formatting"
-       (p "Change " (code "format-name") " to take a second argument, "
-          (code "order") ". If " (code "order") " equals " (code ":last")
-          ", then the format should be \"Last, First Middle\"; otherwise, "
-          "it should be \"First Middle Last.\"")))
-
-     (chapter
-      :title "Boolean logic"
-      (slide
-       :title (h3 (code "and") ", " (code "or") ", and " (code "not"))
-       (table
-        (tr
-          (th "x") (th "y") (th "(and x y)") (th "(or x y)") (th "(not x)") (th "(not y)")
-)
-        (tr
-          (td "false")(td "false")(td "false")(td "false")(td "true")(td "true"))
-        (tr
-          (td "true")(td "false")(td "false")(td "true")(td "false")(td "true"))
-        (tr
-          (td "true")(td "true")(td "true")(td "true")(td "false")(td "false"))
-        (tr
-          (td "false")(td "true")(td "false")(td "true")(td "true")(td "false"))
-        )))
-
-
-
-     (chapter
-      :title "Let"
-      (slide
-       :title (h3 (code "let"))
-       (hlclj
-        ;;{{
-        (defn spread
-          "Given a collection of numbers, return the difference between the largest and smallest number."
-          [numbers]
-          (let [largest (reduce max numbers)
-                smallest (reduce min numbers)]
-            (- largest smallest)))
-        
-        (spread [10 7 3 -3 8]) ;=> 13
-        ;;}}
-        ))
-      (slide
-       :title "Exercise: Rewrite average"
-       (p "Go back to the " (code "average") " function you created before and "
-          "use " (code "let") " to make it easier to read."))
-
-
-      (slide
-       :title "Bonus: Ordinal numbers"
-       (p "Given a number (positive integer), return the string representing the ordinal number. For many numbers, this is done by adding " (code "\"th\"") " to the end.")
-       (p "Part one: return the ordinal number string, but for numbers ending in 1, 2, or 3, add " (code "\"st\"") ", " (code "\"2nd\"") ", and " (code "\"rd\"") " respectively. Ex:")
-       (hlclj
-        ;;{{
-        (ordinal 1)  ;=> "1st"
-        (ordinal 2)  ;=> "2nd"
-        (ordinal 3)  ;=> "3rd"
-        (ordinal 4)  ;=> "4th"
-        (ordinal 5)  ;=> "5th"
-        (ordinal 21) ;=> "21st"
-        (ordinal 22) ;=> "22nd"
-        ;;}}
-        )
-       (p "You will need the " (code "rem") " function, which takes 2 integers and returns the remainder from dividing the first by the second.  You will also find that nesting "  (code "if") " forms (putting one inside another) to be useful."))
-      (slide
-       :title "Bonus: Ordinal numbers"
-       (p "Part two: our exceptions for numbers ending in 1, 2, or 3 are superceded when the last 2 digits are 11, 12, or 13, in which case just add " (code "\"th\"") ". Ex:")
-       (hlclj
-        ;;{{
-        (ordinal 10) ;=> "10th"
-        (ordinal 11) ;=> "11th"
-        (ordinal 12) ;=> "12th"
-        (ordinal 13) ;=> "13th"
-        (ordinal 14) ;=> "14th"
-        ;;}}
-        )
-       (p "Part three: rewrite the nested if statements using the " (code "cond") " function."  ))
+     :title "Anonymous functions"
+     (hlclj
+      ;;{{      
+      (map (fn [x] (* 3 x)) [1 2 3]) ;=> [3 6 9]
       
-      )
-     
+      (reduce (fn [x y] (+ x y)) [1 2 3]) ;=> 6
+      
+      (reduce
+        (fn [s1 s2] (str s1 " " s2))
+        ["i" "like" "peanut" "butter" "and" "jelly"])
+        ;=> "i like peanut butter and jelly"
+      ;;}}     
+      )))
      )))

@@ -41,3 +41,7 @@ Write the name of your hometown as a string, and then assign that string to the 
 ### EXERCISE: Make a function to format names
 
 The `str` function can take any number of arguments, and it concatenates them together to make a string. Write a function called `format-name` that takes two arguments, `first-name` and `last-name`. This function should output the name like so: `Last, First`.
+
+### Next Step:
+Go on to [<b>Module 3:</b> Data Structures](https://github.com/clojurebridge-minneapolis/curriculum/blob/master/outline/data_structures.mdb)
+Back to [<b>Module 1:</b> Intro to Programming with Clojure](https://github.com/clojurebridge-minneapolis/curriculum/blob/master/outline/intro.mdb)

@@ -179,3 +179,6 @@ Then convert that to centimeters. There are 2.54 centimeters in an inch.
 Lastly, ask two people near you for their height in centimeters. Find the average of your heights.
 
 Bonus: Convert that average back to feet and inches. `(mod x y)` will give you the remainder when dividing two numbers.
+
+### Next Step:
+Go on to [<b>Module 2:</b> More Simple Values](https://github.com/clojurebridge-minneapolis/curriculum/blob/master/outline/simple_values2.mdb)

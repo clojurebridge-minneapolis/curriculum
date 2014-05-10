@@ -61,3 +61,7 @@ Now, take a look at the last three functions. `count` does what you'd expect: it
 ### EXERCISE: Make a vector
 
 Make a vector of the average high temperatues in each month of the year in the town where you live. Then use the `nth` function to get the average high temperature for the current month from the vector.
+
+### Next Step:
+Go on to [<b>Module 4: Functions</b> ](https://github.com/clojurebridge-minneapolis/curriculum/blob/master/outline/functions.md)
+Back to [<b>Module 2:</b> More Simple Values](https://github.com/clojurebridge-minneapolis/curriculum/blob/master/outline/simple_values2.md)

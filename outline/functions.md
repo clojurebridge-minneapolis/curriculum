@@ -127,3 +127,7 @@ In the example above, `reduce` calls `add` with the parameters `6.51` and `6.51`
 Create a function called `average` that takes a vector of bill amounts and returns the average of those amounts.
 
 Hint: You will need to use `reduce` and `count`.
+
+### Next Step:
+Go on to [<b>Module 5:</b> Flow Control](https://github.com/clojurebridge-minneapolis/curriculum/blob/master/outline/flow_control.md)
+Back to [<b>Module 3:</b> Data Structures](https://github.com/clojurebridge-minneapolis/curriculum/blob/master/outline/data_structures.md)

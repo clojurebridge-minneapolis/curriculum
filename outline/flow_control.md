@@ -152,3 +152,7 @@ As part two, our exceptions above based on the last digit are superceded when th
 (ordinal 13) ;=> "13th"
 (ordinal 14) ;=> "14th"
 ```
+
+### Next Step:
+Go on to [<b>Module 6:</b> More Data Structures](https://github.com/clojurebridge-minneapolis/curriculum/blob/master/outline/data_structures2.md)
+Back to [<b>Module 4:</b> Functions](https://github.com/clojurebridge-minneapolis/curriculum/blob/master/outline/functions.md)

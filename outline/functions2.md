@@ -52,14 +52,6 @@ You can ask if things are not equal by using "not=" or wrapping an equals check 
 (not (= 2 2))	;=> false
 ```
 
-For example, here is a function called `vegetarian?` that determines whether a person is vegetarian or not:
-
-```clj
-(defn vegetarian?
-  [person]
-  (= :vegetarian (:dietary-restrictions person)))
-```
-
 Some other comparison functions for numbers are `>`, `>=`, `<`, and `<=`.
 
 ```clj
@@ -91,7 +83,37 @@ When we learned about data structures, we saw many functions that operated on th
 * `dissoc`
 * `merge`
 
-Some of the most powerful functions you can use with collections can take other functions as arguments. That's a complicated idea, so we'll learn more about that next.
+Some of the most powerful functions you can use with collections can take other functions as arguments. That's a complicated idea, so we'll learn more about that soon.
+
+### Naming functions
+
+Often a program is easier to read when you give comparisons and other function calls a name.  Instead of simply checking:
+
+```clj
+(>= (:age person) 18)
+```
+consider defining that test as a function and using the function where you need to check.:
+
+```clj
+(defn legal-to-vote?
+  "Is it legal for a person to vote?"
+  [person]
+  (>= (:age person) 18))
+  ```
+
+Here's another example, a function to test if someone is old enough to marry.
+
+```clj
+(defn legal-to-marry?
+  "Is it legal for a person to marry?"
+  [person]
+  (>= (:age person) 18))
+```
+
+By giving the test an explicit name, it makes it easier to see what the program is trying to mean.  It also means that if the legal
+voting age changes or there are other reasons a person might not be allowed to vote, you only have to change your program in one place.
+
+By convention, functions that return booleans have names that end with `?`.
 
 ### Anonymous functions
 

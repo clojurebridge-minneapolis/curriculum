@@ -29,9 +29,9 @@
   * Advanced: [community docs](https://clojurebridge.github.io/community-docs/index.html): basics of function, map, reduce, SQL Database - Apache Derby
 * Flow Control ([slides](https://clojurebridge-minneapolis.github.io/slides/module7.html), [chat 1](web-app-notes.md#add-some-flow-control), [chat 2](web-app-notes.md#simplify-things-with-let), [walk-through](outline/flow_control.md), lightening talk)
   * Advanced: [community docs](https://clojurebridge.github.io/community-docs/index.html): if, cond, case, let, destructuring, function with let/destructuring
-* More Data Structures ([slides](https://clojurebridge-minneapolis.github.io/slides/module6.html), [chat 1](web-app-notes.md#maps), [chat 2](web-app-notes.md#post-a-name-and-message), [walk-through](outline/data_structures2.md), lightening talk)
+* More Data Structures ([slides](https://clojurebridge-minneapolis.github.io/slides/module6.html), [chat 1](web-app-notes.md#maps), [chat 2](web-app-notes.md#post-a-name-and-message), [walk-through](outline/data_structures2.md), lightening talk: Clojure and immutability - Ted)
   * Advanced: [community docs](https://clojurebridge.github.io/community-docs/index.html): map, lazy-seq
-* More Functions ([slides](https://clojurebridge-minneapolis.github.io/slides/module5.html), [chat 1](web-app-notes.md#store-and-display-messages), [chat 2](web-app-notes.md#make-it-pretty-by-adding-bootstrap), [walk-through](outline/functions2.md), lightening talk)
+* More Functions ([slides](https://clojurebridge-minneapolis.github.io/slides/module5.html), [chat 1](web-app-notes.md#store-and-display-messages), [chat 2](web-app-notes.md#make-it-pretty-by-adding-bootstrap), [walk-through](outline/functions2.md), lightening talk: Parallelism in Clojure - Nic McPhee)
   * Advanced: [community docs](https://clojurebridge.github.io/community-docs/index.html): anonymous function, higher-order function, filter, for, loop, recur, trampoline
 
 

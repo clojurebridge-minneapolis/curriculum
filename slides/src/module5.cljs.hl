@@ -1,4 +1,4 @@
-(page "module7.html"
+(page "module5.html"
       (:require [hoplon.reveal :refer [slideshow intro bullet chapter slide
                                        notes highlight column quicklist]]
                 [tailrecursion.hoplon.reload :refer [reload-all]]))

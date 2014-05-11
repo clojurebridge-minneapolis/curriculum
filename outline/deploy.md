@@ -26,4 +26,4 @@ Your commit message should refer to the changes you've made. Something like "Add
 
 Yay! Your application is now live on the web!
 
-Back to [**Module 8:** Putting your application online ](deploy.md)
+Back to [**Module 7:** More Functions](functions2.md)

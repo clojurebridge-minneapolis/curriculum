@@ -21,7 +21,6 @@
     (slideshow
      :theme "mozilla-theme.css"
      (intro
-<<<<<<< HEAD
       :title "Module 4")
      (chapter
       :title "Functions"
@@ -353,4 +352,3 @@
          "bill amounts and returns the average of those amounts.")
       (p "Hint: you will need to use "
          (code "reduce") " and " (code "count") "."))))))
->>>>>>> 4877ac1eca06d1849b86479e241cb9733da4fa4d

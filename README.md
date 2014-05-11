@@ -11,10 +11,10 @@
   * Thank our sponsors!
   * Format for each module
     1. Present slides for each module
-    1. Add the related code to our chat application
-    1. Work through the module in small groups
-    1. Bonus: Go through related Community Docs sections
-    1. [Lightning talk](lightning-talks/README.md)
+    1. Update the related code to our chat application
+    1. Work through the module exercise in small groups
+    1. Advanced: Go through related Community Docs sections
+    1. *[Lightning talk](#lightning-talks)*
 * Go around the room, everyone introduce yourselves
   * How did you hear about ClojureBridge?
   * Why is this important to you?

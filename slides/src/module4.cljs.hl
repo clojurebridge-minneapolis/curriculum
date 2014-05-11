@@ -21,6 +21,223 @@
     (slideshow
      :theme "mozilla-theme.css"
      (intro
+<<<<<<< HEAD
+      :title "Module 4")
+     (chapter
+      :title "Functions"
+      (slide
+       :title "What are functions?"
+       (ul
+        (li "A piece of code that returns a value based the arguments provided." (br))
+        (li "Builtin functions: " (code-list "count" "conj" "first" "nth") (br))
+        (li "Operators: " (code-list "+" "-" "*" "/") (br))
+        (li "Another type of value")))
+
+      (slide
+       :title "A simple function"
+       (hlclj
+        ;;{{
+        (fn [subtotal] (* 1.085 subtotal))
+
+        (fn                   ;; Create a function
+          [subtotal]          ;; Arguments
+          (* 1.085 subtotal)) ;; Body
+        ;;}}
+        )
+       "What's Missing:" (br)
+       (ul (li "Name")
+           (li "Descrption")))
+
+      (slide
+       :title "A simple, named function"
+       (code "def ") "binds functions to a "
+       "name, just like other values."
+       (hlclj
+        ;;{{
+        (def some-numbers (vector 1 2 3 4))
+
+        (def total-bill          ;; Define 'total-bill'
+          (fn [subtotal]         ;; ... to be a function
+            (* 1.085 subtotal)))
+
+        (total-bill 10)  ;; => 10.85
+        ;;}}
+       )
+      )
+
+      (slide
+       :title "A simple, named, documented function"
+       "Documentation can be added to any defined value, functions or data."
+       (hlclj
+        ;;{{
+        (def total-bill       ;; Define 'total-bill'
+          ;; Description of the function
+          "Given the subtotal of a bill,
+           return the total after tax."
+          (fn [subtotal]
+            (* 1.085 subtotal)))
+        ;;}}
+       )
+      )
+
+      (slide
+       :title "A simple function, simplified"
+       (code "defn") ": A contraction of " (code "def") " and " (code "fn")
+       (hlclj
+        ;;{{
+        (defn total-bill
+          "Given the subtotal of a bill,
+           return the total after tax."
+          [subtotal]
+          (* 1.085 subtotal))
+
+        (total-bill 10)  ;; => 10.85
+        ;;}}
+       )
+       (code "defn") " condenses the declarations of named functions."
+      )
+
+      (slide
+       :title "A function with multiple arguments."
+       (hlclj
+        ;;{{
+        (defn total-with-tip
+          [subtotal tip-pct]     ;; takes 2 arguments
+          (* 1.085 subtotal (+ 1 tip-pct)))
+
+        (total-with-tip 50 0.18) ;; => 64.015
+        ;;}}
+        ))
+
+      (slide
+       :title "Naming functions"
+       (ul
+        (li "Functions are named like any other value")
+        (li (p "Predicate functions usually end in " (code "?"))
+            (ul
+             (li (code "zero?"))
+             (li (code "vector?"))
+             (li (code "empty?"))))))
+
+      (slide
+       :title "Find per-person share of bill among a group"
+       (p "Modify our " (code "total-with-tip") " function, and call the new function " (code "share-per-person") ", that additionally takes in as an argument the number of people in the group for a bill.")
+       (p "Have the function return the average bill amount per person."))
+      )
+
+     (chapter
+      :title "Functions that take other functions"
+      (slide
+       :title (h3 (code "map"))
+       "Map applies a provided function to each element of a sequence."
+       (hlclj
+        ;;{{
+        (def dine-in-orders  [12.40 18.95 19.95 12.40])
+        (def take-out-orders [7.20 6.00 7.95 6.25])
+
+        (map total-bill dine-in-orders)
+        ;; => [13.454 20.56075 21.64575 13.454]
+
+        (map total-bill take-out-orders)
+        ;; => [7.812 6.51 8.62575 6.78125]
+        ;;}}
+       )
+      )
+
+      (slide
+       :title (h3 (code "reduce"))
+       "Reduces a list of values to a single value by iteratively applying a provided function."
+       (hlclj
+        ;;{{
+        (defn add
+          [x y]
+          (+ x y))
+
+        (reduce add [1 2 3]) ;; => 6
+        ;;}}
+       ))
+
+      (slide
+       :title (h3 (code "reduce") " in action")
+       (hlclj
+        ;;{{
+        (def take-out-totals [7.812 6.51 8.62575 6.78125])
+
+        (reduce add take-out-totals) ;; => 29.729
+
+        (add (add (add 7.812 6.51)
+                  8.62575)
+             6.78125)
+
+        (add 7.812 6.51)       ;; => 14.322
+        (add 14.322 8.62575)   ;; => 22.94775
+        (add 22.94775 6.78125) ;; => 29.729
+        ;;}}
+       )))
+
+     (chapter
+      :title "Functions that return functions"
+      (slide
+       :title (h3 "Returning a function")
+       (hlclj
+        ;;{{
+        (defn local-total-bill
+          [tax-pct]
+          (fn [subtotal]
+            (+ subtotal
+              (* tax-pct subtotal))))
+
+        (def mpls-total-bill   (local-total-bill 0.07775))
+        (def stpaul-total-bill (local-total-bill 0.07625))
+
+        (mpls-total-bill 8.5)   ;; => 9.160875
+        (stpaul-total-bill 8.5) ;; => 9.148125
+        ;;}}
+       ))
+
+      (slide
+       :title (h3 (code "partial"))
+       (hlclj
+        ;;{{
+        (defn total-bill
+          [pct subtotal]
+          (+ subtotal
+            (* tax-pct subtotal)))
+
+        (def mpls-total-bill   (partial total-bill 0.07775))
+        (def stpaul-total-bill (partial total-bill 0.07625))
+
+        (mpls-total-bill 8.5)   ;; => 9.160875
+        (stpaul-total-bill 8.5) ;; => 9.148125
+        ;;}}
+       ))
+
+      (slide
+       :title (h3 (code "comp"))
+       (hlclj
+        ;;{{
+        (defn f [s] (str "F(" s ")"))
+        (defn g [s] (str "G(" s ")"))
+
+        (f "functional")   ;; => "F(functional)"
+        (g "composition")  ;; => "G(composition)"
+
+        (def f-o-g (comp f g))
+        (f-o-g "Clojure")  ;; => "F(G(Clojure))"
+
+        (f (g "Clojure"))  ;; => "F(G(Clojure))"
+        ;;}}
+       ))
+     )
+
+     (chapter
+      :title "Exercise: Find the average"
+      (br)
+      (p "Create a function called " (code "average") " that takes a vector of "
+         "bill amounts and returns the average of those amounts.")
+      (p "Hint: " (code "reduce") " and " (code "count")
+         " should make this simple."))))))
+=======
       :title "Module 3") 
      (chapter
       :title "Functions"
@@ -136,3 +353,4 @@
          "bill amounts and returns the average of those amounts.")
       (p "Hint: you will need to use "
          (code "reduce") " and " (code "count") "."))))))
+>>>>>>> 4877ac1eca06d1849b86479e241cb9733da4fa4d

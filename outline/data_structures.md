@@ -1,5 +1,5 @@
-Data Structures
-===============
+Module 3: Data Structures
+=========================
 
 * Collections
 * Vectors
@@ -64,6 +64,6 @@ Make a vector of the average high temperatues in each month of the year in the t
 
 ### Next Step:
 
-Go on to [<b>Module 4: Functions</b> ](functions.md)
+Go on to [**Module 4:** Functions ](functions.md)
 
-Back to [<b>Module 2:</b> More Simple Values](simple_values2.md)
+Back to [**Module 2:** More Simple Values](simple_values2.md)

@@ -1,5 +1,5 @@
-Putting Your Application Online
-===============================
+Module 8: Putting Your Application Online
+=========================================
 
 What is deployment?
 -----------------
@@ -20,3 +20,10 @@ Your commit message should refer to the changes you've made. Something like "Add
 4. Push your changes to Heroku by running <code>git push heroku master</code>. This command takes all the changes you've committed locally and pushes them to Heroku.
 
 5. Run <code>heroku open</code>. Your application should open in your browser. If that doesn't happen, open a browser and go to the URL displayed after you ran <code>heroku create</code>. Profit!
+
+
+### Next Step:
+
+Yay! Your application is now live on the web!
+
+Back to [**Module 8:** Putting your application online ](deploy.md)

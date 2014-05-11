@@ -1,5 +1,5 @@
-More Simple Values
-========================================
+Module 2: More Simple Values
+============================
 
 * Simple values
     - Strings
@@ -41,3 +41,9 @@ Write the name of your hometown as a string, and then assign that string to the 
 ### EXERCISE: Format names
 
 The `str` function can take any number of arguments, and it concatenates them together to make a string. Use str to format `first-name`, `last-name`, and `my-hometown` like so: `Last, First from Hometown`.
+
+### Next Step:
+
+Go on to [**Module 3:** Data Structures](data_structures.md)
+
+Back to [**Module 1:** Intro to Programming with Clojure](intro.md)

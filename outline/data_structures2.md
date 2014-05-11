@@ -1,5 +1,5 @@
-More Data Structures
-===============
+Module 6: More Data Structures
+==============================
 
 * Maps
 * Collections of Collections
@@ -111,3 +111,9 @@ First, take the map you made about yourself.
 Then, find two or three other classmates around you. Ask them their first and last name and their hometown. Make a vector of maps with their information.
 
 Lastly, add your information to their information using `conj`.
+
+### Next Step:
+
+Go on to [**Module 7:** More Functions](functions2.md)
+
+Back to [**Module 5:** Flow Control](flow_control.md)

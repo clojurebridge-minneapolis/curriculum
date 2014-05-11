@@ -47,16 +47,16 @@
         ))
       (slide
        :title "Exercise: Store your name and the name of your hometown"
-       (p "Write the name of your hometown as a string and then assign " 
+       (p "Write the name of your hometown as a string and then assign "
           "that string to the symbol "
           (code "my-hometown")
           ".")
-        (p "Assign your first name to " (code "first-name") 
-           " and your last name to " (code "last-name")))
+       (p "Assign your first name to " (code "first-name")
+          " and your last name to " (code "last-name")))
       (slide
        :title "Exercise: Format names"
        (p "The " (code "str") " function can take any number of arguments, and it "
           "concatenates them together to make a string.")
-       (p "Use " (code "str) " to format " (code "first-name") ", " (code "last-name")
+       (p "Use " (code "str") " to format " (code "first-name") ", " (code "last-name")
           ", and " (code "my-hometown") " like so: Last, First from Hometown."))))))
 

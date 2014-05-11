@@ -22,6 +22,9 @@ Your commit message should refer to the changes you've made. Something like "Add
 5. Run <code>heroku open</code>. Your application should open in your browser. If that doesn't happen, open a browser and go to the URL displayed after you ran <code>heroku create</code>. Profit!
 
 
+*FYI:* See what ```handler.clj``` looks like now by viewing the current branch
+[master](https://github.com/clojurebridge-minneapolis/chat/blob/master/src/awesome/handler.clj)
+
 ### Next Step:
 
 Yay! Your application is now live on the web!

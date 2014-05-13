@@ -49,7 +49,7 @@
 * Module-8 (*extra credit*) Putting your application online with Heroku
   * [Putting Your Application Online](outline/deploy.md)
 * Next Steps: You are now part of the Clojure Community!
-  * Yser group meetings: [clojure.mn](http://clojure.mn)
+  * User group meetings: [clojure.mn](http://clojure.mn)
   * IRC [#clojure.mn](https://webchat.freenode.net/?channels=clojure.mn)
   * Related local events
   * More learning resources

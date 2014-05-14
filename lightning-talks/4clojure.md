@@ -1,7 +1,7 @@
 Lightning Talk: 4clojure
 ========================
 
-*Details soon...*
+http://www.4clojure.com
 
 
 

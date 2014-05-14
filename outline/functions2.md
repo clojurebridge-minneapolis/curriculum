@@ -3,7 +3,10 @@ Module 7: More Functions
 
 * Important functions
   * Comparison (boolean) functions
+  * Numerical functions
   * String functions
+  * Collection functions
+* Naming functions
 * Anonymous functions
 
 ## Important functions
@@ -129,7 +132,8 @@ An anonymous function is created with `fn`, like so:
 
 You might notice that this function is the same as the function we called `join-with-space`. `fn` works a lot like `defn`; we still have arguments listed as a vector and a function body. I didn't break the line in the anonymous function above, but you can, just like you can in a named function.
 
-Why would you ever do this? Anonymous functions can be very useful when we have functions that take other functions. Let's take each of our examples above, but use anonymous functions instead of named functions.
+Why would you ever do this?  Sometimes you need a function but it's just a one-off as part of some other calculation.  Good names are hard, poorly choosen names are confusing and make the program harder to read in the long run.
+Anonymous functions can be very useful when we have functions that take other functions. Let's take each of our examples above, but use anonymous functions instead of named functions.
 
 ```clj
 (map (fn [x] (* 3 x)) [1 2 3]) ;=> [3 6 9]

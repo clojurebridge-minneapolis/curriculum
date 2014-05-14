@@ -41,7 +41,7 @@
         ;;{{
         (defn vegetarian?
           [person]
-          (= :vegetarian (get person :dietary-restrictions)))
+          (= :vegetarian (:dietary-restrictions person)))
         ;;}}
         ))      
       (slide

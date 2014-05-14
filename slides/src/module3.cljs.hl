@@ -21,7 +21,7 @@
     (slideshow
      :theme "mozilla-theme.css"
      (intro
-      :title "Module 2")
+      :title "Module 3")
      (chapter
       :title "Data Structures"
       (slide

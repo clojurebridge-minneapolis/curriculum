@@ -17,7 +17,7 @@
     (slideshow
      :theme "mozilla-theme.css"
      (intro
-      :title "Module 7")
+      :title "Module 5")
      (chapter
       :title "Flow control"
       (slide

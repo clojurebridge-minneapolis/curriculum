@@ -16,6 +16,14 @@ By the end of these instructions, you will have the following installed:
 * Light Table, an editor for Clojure and other programming languages
 * The Heroku Toolbelt, a program for putting your Clojure application on the web
 * Git, a program for managing your program's code, which is included in the Heroku Toolbelt
+* An IRC client
+
+And you will have:
+
+* Created a ````ssh```` key (the public part of which will be uploaded to github and heroku)
+* Copied the example chat application with ````git clone````
+* Pushed your copy of the chat application to heroku
+* Joined the ````#clojure.mn```` IRC channel
 
 ## Instructions by operating system
 

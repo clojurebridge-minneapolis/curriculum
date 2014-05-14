@@ -22,7 +22,7 @@ For the rest of this setup, I will tell you to run commands in your terminal. Wh
 
 ## Making sure Java is installed
 
-Run `java -version` in your terminal. If you do not have Java installed, Ubuntu will prompt you to install it. It should look something like this: 
+Run `java -version` in your terminal. If you do not have Java installed, Ubuntu will prompt you to install it. It should look something like this:
 
 ![no java](img/ubuntu/no_java.png)
 
@@ -49,25 +49,27 @@ After that, run the following commands in your terminal. You will be prompted to
 sudo mkdir -p /usr/local/bin/
 sudo mv ~/Downloads/lein* /usr/local/bin/lein
 sudo chmod a+x /usr/local/bin/lein
-export PATH=$PATH:/usr/local/bin
+cd $HOME
+echo 'PATH=$PATH:/usr/local/bin' >> .bashrc
+exec bash
 ```
 
 After you run the above commands, run the `lein version` command. It should take a while to run, as it will download some resources it needs the first time. If it completes successfully, you are golden! If not, ask an instructor for help.
 
 ## Installing Light Table
 
-You will need to know whether you are running the 32-bit or 64-bit version of Ubuntu. To find out, click Dash Home and type Details. You should see a window like this: 
+You will need to know whether you are running the 32-bit or 64-bit version of Ubuntu. To find out, click Dash Home and type Details. You should see a window like this:
 
-![Ubuntu Version](img/ubuntu/ubuntu-version.png) 
+![Ubuntu Version](img/ubuntu/ubuntu-version.png)
 
 Alternatively, open your terminal and type `uname -m` if the output says "x86_64" you have a 64-bit OS, if it says "i686" you have a 32-bit OS.
 
 Go to the [Light Table site](http://www.lighttable.com/). On the page there, you should see a set of buttons that have download links for Light Table.
-Depending on your architecture, click the "Linux64" or "Linux32" button and select the "Save file". 
+Depending on your architecture, click the "Linux64" or "Linux32" button and select the "Save file".
 
 ![Light Table downloads](img/ubuntu/lighttable.png)
 
-Open up your terminal and cd to the directory where your downloads go `cd ~/Downloads`. 
+Open up your terminal and cd to the directory where your downloads go `cd ~/Downloads`.
 Check to see that your file is there. `ls`
 Extract the compressed file `tar -xzf LightTableLinux64.tar.gz`
 Check to see that there is now a directory called LightTable `ls`
@@ -76,7 +78,7 @@ Set your path so you can launch LightTable from the command line `export PATH=$P
 Launch LightTable `LightTable`
 
 If you want, you can create a launcher for LightTable. `sudo gnome-desktop-item-edit /usr/share/applications/ --create-new`
-You should see a window like this: 
+You should see a window like this:
 
 ![Create Icon](img/ubuntu/create_icon.png)
 

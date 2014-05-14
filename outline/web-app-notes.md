@@ -1,14 +1,12 @@
 # Web App Notes
 
-
 ## Set up your app
+*Module 1*
 
 ```bash
 lein new compojure chat
 cd chat
-lein ring server
 ```
-
 
 This should create a directory structure that looks like this:
 
@@ -40,9 +38,17 @@ There's nothing inherently special or Clojure-y about this project skeleton. It'
 - `resources` is a place for you to store assets like images; we won't
   be using it today.
 
+*FYI:* See what our chat app looked like at this point by viewing the
+[Module-1 branch](https://github.com/clojurebridge-minneapolis/chat/tree/Module-1)
+
 Now let's go ahead and actually run this project. Enter this at the command line:
 
+```bash
+lein ring server
+```
+
 ## Say hello to yourself
+*Module 2*
 
 Open up your Chat application in LightTable. In LightTable open ```chat/src/chat.handler.clj```.
 
@@ -53,10 +59,11 @@ Change the ```(GET "/" ...``` line to say hello to yourself
 
 View your page at http://localhost:3000/
 
-[commit](https://github.com/clojurebridge-minneapolis/chat/commit/68695029d7933fc0272b4cd5d541ff9473db340b)
-
+*FYI:* See what ```handler.clj``` looked like at this point by viewing the
+[Module-2 branch](https://github.com/clojurebridge-minneapolis/chat/blob/Module-2/src/awesome/handler.clj)
 
 ## Write some html with Hiccup
+*Module 3*
 
 Under the ```(GET "/" ...``` line, add a new route like this:
 ```clojure
@@ -74,15 +81,13 @@ Because we've changed our ```project.clj``` file, you'll need to restart your se
 ; add this to the ```:require``` section at the top of handler.clj
 [hiccup.page :as page]
 ```
-![diff](img/project_hiccup_dependencies.png)
-![diff](img/handler_require.png)
-
 View your page at http://localhost:3000/hello2
 
-[commit](https://github.com/clojurebridge-minneapolis/chat/commit/a5eb7cb2c6753cda053c716bc740fe6fdce5f9de)
-
+*FYI:* See what ```handler.clj``` looked like at this point by viewing the
+[Module-3 branch](https://github.com/clojurebridge-minneapolis/chat/blob/Module-3/src/awesome/handler.clj)
 
 ## Add a form
+*Module 4*
 
 Add a new item in ```:require```
 ```clojure
@@ -114,10 +119,11 @@ View your page at http://localhost:3000/who. If you submit the form, you'll get 
 (POST "/iam" {params :params} (iam params))
 ```
 
-[commit](https://github.com/clojurebridge-minneapolis/chat/commit/fda95cd021e832f8230d7eded8240488fb80d89f)
-
+*FYI:* See what ```handler.clj``` looked like at this point by viewing the
+[Module-4 branch](https://github.com/clojurebridge-minneapolis/chat/blob/Module-4/src/awesome/handler.clj)
 
 ## Add some flow control
+*Module 5*
 
 ```clojure
 ; change the iam function to look like this
@@ -131,9 +137,6 @@ View your page at http://localhost:3000/who. If you submit the form, you'll get 
       (when (> (count (:name params)) 7)
           [:li "You should consider a nickname."])]]))
 ```
-
-[commit](https://github.com/clojurebridge-minneapolis/chat/commit/705227c000454f18c0f1ac7bba79bcf7f71e627a)
-
 
 ## Simplify things with ```let```
 
@@ -152,10 +155,11 @@ That's nice, but we've written ```(:name params)``` a lot. Change the function t
             [:li "You should consider a nickname."])]])))
 ```
 
-[commit](https://github.com/clojurebridge-minneapolis/chat/commit/4bf28482e4b6c72bba1c6b635a1e30b2fd9f9879)
-
+*FYI:* See what ```handler.clj``` looked like at this point by viewing the
+[Module-5 branch](https://github.com/clojurebridge-minneapolis/chat/blob/Module-5/src/awesome/handler.clj)
 
 ## Maps
+*Module 6*
 
 We can look at our params map by printing it out. Change the ```iam``` function to this:
 ```clojure
@@ -172,9 +176,6 @@ We can look at our params map by printing it out. Change the ```iam``` function 
         (when (> (count name) 7)
             [:li "You should consider a nickname."])]])))
 ```
-
-[commit](https://github.com/clojurebridge-minneapolis/chat/commit/9dcfa8cf5577c6fa65d7f8141d7788a5e56d1add)
-
 
 ## Post a name and message
 
@@ -194,10 +195,11 @@ We can look at our params map by printing it out. Change the ```iam``` function 
 View your app and submit a name and a message. Notice that the name is still there when you
 submit the page.
 
-[commit](https://github.com/clojurebridge-minneapolis/chat/commit/0af9ad31c50d8bd8552df759ec6dfdba35b7dbb7)
-
+*FYI:* See what ```handler.clj``` looked like at this point by viewing the
+[Module-6 branch](https://github.com/clojurebridge-minneapolis/chat/blob/Module-6/src/awesome/handler.clj)
 
 ## Store and display messages
+*Module 7*
 
 First, add an atom so we can store our messages somewhere.
 ```clojure
@@ -217,9 +219,6 @@ Next, update our messages atom and print them out
 ```
 
 Try using your app to chat with someone
-
-[commit](https://github.com/clojurebridge-minneapolis/chat/commit/7350384b5f97dc618a4e81a175e8bfaf12c629e1)
-
 
 ## Make it pretty by adding Bootstrap
 
@@ -257,4 +256,5 @@ Add some code to make Bootstrap work in your ```src/chat/handler.clj``` file:
   (handler/site (middleware/wrap-bootstrap-resources app-routes)))
 ```
 
-[commit](https://github.com/clojurebridge-minneapolis/chat/commit/a518836ff9b7e0016d006051fd88dd707ffcdbe7)
+*FYI:* See what ```handler.clj``` looked like at this point by viewing the
+[Module-7 branch](https://github.com/clojurebridge-minneapolis/chat/blob/Module-7/src/awesome/handler.clj)

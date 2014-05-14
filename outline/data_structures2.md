@@ -1,5 +1,5 @@
-More Data Structures
-===============
+Module 6: More Data Structures
+==============================
 
 * Maps
 * Collections of Collections
@@ -29,8 +29,8 @@ Let's look at some functions we can use with maps:
 (get {:first "Sally" :last "Brown"} :first)
 ;=> "Sally"
 
-(get {:first "Sally"} :last :MISS)
-=> :MISS
+(get {:first "Sally"} :last :MISSING)
+=> :MISSING
 
 (assoc {:first "Sally"} :last "Brown")
 ;=> {:first "Sally", :last "Brown"}
@@ -56,7 +56,7 @@ Let's look at some functions we can use with maps:
 
 We don't have nearly as many functions here in common as vectors and lists did.
 
-`get` works a lot like `nth` did with vectors, but takes a key instead of a number. It uses the supplied key to look up a value in the map. What do you think is happening with the second example of `get`? We can supply a value for `get` to return if it can't find the key we asked for. In this case, we supplied the key `:MISS`.
+`get` works a lot like `nth` did with vectors, but takes a key instead of a number. It uses the supplied key to look up a value in the map. What do you think is happening with the second example of `get`? We can supply a value for `get` to return if it can't find the key we asked for. In this case, we supplied the key `:MISSING`.
 
 `assoc` and `dissoc` are paired functions: they associate and disassociate items from a map. See how we add the last name "Brown" to the map with `assoc`, and then we remove it with `dissoc`. `merge` merges two maps together to make a new map.
 
@@ -73,8 +73,8 @@ Let's look at one more thing about maps before we move on. You can always use `g
 => "Sally"
 (:last {:first "Sally"})
 => nil
-(:last {:first "Sally"} :MISS)
-=> :MISS
+(:last {:first "Sally"} :MISSING)
+=> :MISSING
 ```
 
 You can use a keyword like you would use a function in order to look up values in a map. Feel free to use `get` in your own code: it can be more clear and less confusing as you're learning Clojure.
@@ -111,3 +111,9 @@ First, take the map you made about yourself.
 Then, find two or three other classmates around you. Ask them their first and last name and their hometown. Make a vector of maps with their information.
 
 Lastly, add your information to their information using `conj`.
+
+### Next Step:
+
+Go on to [**Module 7:** More Functions](functions2.md)
+
+Back to [**Module 5:** Flow Control](flow_control.md)

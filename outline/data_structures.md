@@ -1,5 +1,5 @@
-Data Structures
-===============
+Module 3: Data Structures
+=========================
 
 * Collections
 * Vectors
@@ -61,3 +61,9 @@ Now, take a look at the last three functions. `count` does what you'd expect: it
 ### EXERCISE: Make a vector
 
 Make a vector of the average high temperatues in each month of the year in the town where you live. Then use the `nth` function to get the average high temperature for the current month from the vector.
+
+### Next Step:
+
+Go on to [**Module 4:** Functions ](functions.md)
+
+Back to [**Module 2:** More Simple Values](simple_values2.md)

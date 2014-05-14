@@ -1,5 +1,5 @@
-Flow Control
-============
+Module 5: Flow Control
+======================
 
 * `if`
 * Boolean logic
@@ -152,3 +152,9 @@ As part two, our exceptions above based on the last digit are superceded when th
 (ordinal 13) ;=> "13th"
 (ordinal 14) ;=> "14th"
 ```
+
+### Next Step:
+
+Go on to [**Module 6:** More Data Structures](data_structures2.md)
+
+Back to [**Module 4:** Functions](functions.md)

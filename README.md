@@ -1,76 +1,66 @@
 # ClojureBridge Curriculum
 
-## Setup
-* get breakfast (bagels, fruit, pastries)
-
-
-## General Module Format
-1. Present the module's slides
-1. Add the related code to our web application
-1. Work through the module
-1. Bonus: Go through related Community Docs sections
-1. Lightening talk
-
-
-## Install-fest
+## Friday: InstallFest
 * [Getting Set Up](outline/setup.md)
 
-
-## Outline
+## Saturday: Workshop
 * Have coffee/water/breakfast, mingle
+* Welcome! Overview...
+  * Background on ClojureBridge
+  * What we hope you get out of ClojureBridge
+  * Thank our sponsors!
+  * Format for each module
+    1. Present slides for each module
+    1. Update the related code to our chat application
+    1. Work through the module exercise in small groups
+    1. Advanced: Go through related Community Docs sections
+    1. *[Lightning talk](#lightning-talks)*
 * Go around the room, everyone introduce yourselves
-  * How did you hear about this?
-  * why are you here?
-  * why is this important to you?
-* Introduction to Programming with Clojure (<a href="https://clojurebridge-minneapolis.github.io/slides/module1.html" target="_blank">slides</a>, [chat](web-app-notes.md#set-up-your-app), [walk-through](outline/intro.md), lightening talk)
+  * How did you hear about ClojureBridge?
+  * Why is this important to you?
+* Module 1: <a href="https://clojurebridge-minneapolis.github.io/slides/module1.html" target="_slides">Introduction to Programming with Clojure</a>
+  * Updating our <a href="outline/web-app-notes.md#set-up-your-app" target="_chat">chat application: Set up your app</a>
+  * [Exercise for Module 1](outline/intro.md)
   * Advanced: [community docs](https://clojurebridge.github.io/community-docs/index.html): comment, types, def, Easy Web Application by Compojure
-* More Simple Values (<a href="https://clojurebridge-minneapolis.github.io/slides/module2.html" target="_blank">slides</a>, [chat](web-app-notes.md#say-hello-to-yourself), [walk-through](outline/simple_values2.md), lightening talk)
+* Module 2: <a href="https://clojurebridge-minneapolis.github.io/slides/module2.html" target="_slides">More Simple Values</a>
+  * Updating our <a href="outline/web-app-notes.md#say-hello-to-yourself" target="_chat">chat application: Say hello to yourself</a>
+  * [Exercise for Module 2](outline/simple_values2.md)
   * Advanced: [community docs](https://clojurebridge.github.io/community-docs/index.html): string, truthiness, Basic Web Application by Ring
-* Data Structures (<a href="https://clojurebridge-minneapolis.github.io/slides/module3.html" target="_blank">slides</a>, [chat](web-app-notes.md#write-some-html-with-hiccup), [walk-through](outline/data_structures.md), lightening talk)
+* Module 3: <a href="https://clojurebridge-minneapolis.github.io/slides/module3.html" target="_slides">Data Structures</a>
+  * Updating our <a href="outline/web-app-notes.md#write-some-html-with-hiccup" target="_chat">chat application: Write some html with Hiccup</a>
+  * [Exercise for Module 3](outline/data_structures.md)
   * Advanced: [community docs](https://clojurebridge.github.io/community-docs/index.html): vector, list, set, namespace, HTML generation by Hiccup
-* Functions (<a href="https://clojurebridge-minneapolis.github.io/slides/module4.html" target="_blank">slides</a>, [chat](web-app-notes.md#add-a-form), [walk-through](outline/functions.md), lightening talk)
+* Module 4: <a href="https://clojurebridge-minneapolis.github.io/slides/module4.html" target="_slides">Functions</a>
+  * Updating our <a href="outline/web-app-notes.md#add-a-form" target="_chat">chat application: Add a form</a>
+  * [Exercise for Module 4](outline/functions.md)
   * Advanced: [community docs](https://clojurebridge.github.io/community-docs/index.html): basics of function, map, reduce, SQL Database - Apache Derby
-* Flow Control (<a href="https://clojurebridge-minneapolis.github.io/slides/module5.html" target="_blank">slides</a>, [chat 1](web-app-notes.md#add-some-flow-control), [chat 2](web-app-notes.md#simplify-things-with-let), [walk-through](outline/flow_control.md), lightening talk)
+* Module 5: <a href="https://clojurebridge-minneapolis.github.io/slides/module5.html" target="_slides">Flow Control</a>
+  * Updating our <a href="outline/web-app-notes.md#add-some-flow-control" target="_chat">chat application: Add some flow control</a>
+  * [Exercise for Module 5](outline/flow_control.md)
   * Advanced: [community docs](https://clojurebridge.github.io/community-docs/index.html): if, cond, case, let, destructuring, function with let/destructuring
-* More Data Structures (<a href="https://clojurebridge-minneapolis.github.io/slides/module6.html" target="_blank">slides</a>, [chat 1](web-app-notes.md#maps), [chat 2](web-app-notes.md#post-a-name-and-message), [walk-through](outline/data_structures2.md), lightening talk: Clojure and immutability - Ted)
+* Module 6: <a href="https://clojurebridge-minneapolis.github.io/slides/module6.html" target="_slides">More Data Structures</a>
+  * Updating our <a href="outline/web-app-notes.md#maps" target="_chat">chat application: Maps</a>
+  * [Exercise for Module 6](outline/data_structures2.md)
   * Advanced: [community docs](https://clojurebridge.github.io/community-docs/index.html): map, lazy-seq
-* More Functions (<a href="https://clojurebridge-minneapolis.github.io/slides/module7.html" target="_blank">slides</a>, [chat 1](web-app-notes.md#store-and-display-messages), [chat 2](web-app-notes.md#make-it-pretty-by-adding-bootstrap), [walk-through](outline/functions2.md), lightening talk: Parallelism in Clojure - Nic McPhee)
+* Module 7: <a href="https://clojurebridge-minneapolis.github.io/slides/module7.html" target="_slides">More Functions</a>
+  * Updating our <a href="outline/web-app-notes.md#store-and-display-messages" target="_chat">chat application: Store and display messages</a>
+  * [Exercise for Module 7](outline/functions2.md)
   * Advanced: [community docs](https://clojurebridge.github.io/community-docs/index.html): anonymous function, higher-order function, filter, for, loop, recur, trampoline
+* Module-8 (*extra credit*) Putting your application online with Heroku
+  * [Putting Your Application Online](outline/deploy.md)
+* Next Steps: You are now part of the Clojure Community!
+  * User group meetings: [clojure.mn](http://clojure.mn)
+  * IRC [#clojure.mn](https://webchat.freenode.net/?channels=clojure.mn)
+  * Related local events
+  * More learning resources
 
+## Lightning Talks
 
-## Global Growth App
-* [Making Your First Program](outline/first-program.md) ([slides](https://clojurebridge-minneapolis.github.io/slides/module8.html))
-* [Making Your Own Web Application](outline/app.md) ([slides](https://clojurebridge-minneapolis.github.io/slides/module9.html))
-* [Putting Your Application Online](outline/deploy.md)
-
-
-## Lightning talk ideas
-* Clojure Koans - http://clojurekoans.com/ - Ryan
-* About our sponsors
-  * LispCast
-  * Brick Alloy
-  * Code42
-  * DevJam
-* http://4clojure.com - Brian
-* About Open Source - Tom Marble
-  * Background on Open Source
-  * Gnome Outreach Program for Women
-* Minnesota Clojure User Group - http://clojure.mn
-* Intro to IRC
-* ClojureScript Koans - http://clojurescriptkoans.com/
-
-
-## Other learning resources
-* Example Clojure app on Heroku - https://devcenter.heroku.com/articles/clojure-web-application
-* Recommended books:
-  * 1st: Clojure Programming (Emerick, Carper, Grand)
-  * 2nd: The Joy of Clojure (Fogus)
-* Clojure Cookbook - https://github.com/clojure-cookbook/clojure-cookbook
-* videos
-  * Are we there yet - http://www.infoq.com/presentations/Are-We-There-Yet-Rich-Hickey
-  * Simple made Easy - http://www.infoq.com/presentations/Simple-Made-Easy
-  * others?
-
+* *After Module 1* [4clojure](lightning-talks/4clojure.md)
+* *After Module 2* [clojurekoans](lightning-talks/clojurekoans.md)
+* *After Module 4* [Women in Open Source Software](lightning-talks/floss-women.md)
+* *After Module 5* [Immutability](lightning-talks/immutability.md)
+* *After Module 6* [Parallelism](lightning-talks/parallelism.md)
 
 ## License
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">ClojureBridge Curriculum</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">ClojureBridge</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.en_US">Creative Commons Attribution 4.0 International License</a>.

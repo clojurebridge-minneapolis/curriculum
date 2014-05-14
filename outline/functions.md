@@ -1,5 +1,5 @@
-Functions
-=========
+Module 4: Functions
+===================
 
 * What are functions?
 * Naming functions
@@ -127,3 +127,9 @@ In the example above, `reduce` calls `add` with the parameters `6.51` and `6.51`
 Create a function called `average` that takes a vector of bill amounts and returns the average of those amounts.
 
 Hint: You will need to use `reduce` and `count`.
+
+### Next Step:
+
+Go on to [**Module 5:** Flow Control](flow_control.md)
+
+Back to [**Module 3:** Data Structures](data_structures.md)

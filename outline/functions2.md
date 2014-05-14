@@ -1,5 +1,5 @@
-More Functions
-=========
+Module 7: More Functions
+========================
 
 * Important functions
   * Comparison (boolean) functions
@@ -139,3 +139,11 @@ Why would you ever do this? Anonymous functions can be very useful when we have 
   ["i" "like" "peanut" "butter" "and" "jelly"])
 ;=> "i like peanut butter and jelly"
 ```
+
+### Next Step:
+
+Yay! You have completed the workshop!
+
+*Extra credit* Go on to [**Module 8:** Putting your application online ](deploy.md)
+
+Back to [**Module 6:** More Data Structures](data_structures2.md)

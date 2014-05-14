@@ -1,5 +1,5 @@
-More Simple Values
-========================================
+Module 2: More Simple Values
+============================
 
 * Simple values
     - Strings
@@ -34,10 +34,16 @@ There is another value like a boolean in some ways, but different. This value is
 
 Keywords are the strangest of the basic value types, because they don't have a real world analog like numbers, strings, and booleans do. You can think of them as a special type of string, one that's used for labels. They are easiest to understand when we cover maps later, as they are most commonly used as keys in maps.
 
-### EXERCISE: Store the name of your hometown
+### EXERCISE: Store your name and the name of your hometown
 
-Write the name of your hometown as a string, and then assign that string to the symbol `my-hometown`.
+Write the name of your hometown as a string, and then assign that string to the symbol `my-hometown`.  Assign your first name to `first-name` and your last name to `last-name`.
 
-### EXERCISE: Make a function to format names
+### EXERCISE: Format names
 
-The `str` function can take any number of arguments, and it concatenates them together to make a string. Write a function called `format-name` that takes two arguments, `first-name` and `last-name`. This function should output the name like so: `Last, First`.
+The `str` function can take any number of arguments, and it concatenates them together to make a string. Use str to format `first-name`, `last-name`, and `my-hometown` like so: `Last, First from Hometown`.
+
+### Next Step:
+
+Go on to [**Module 3:** Data Structures](data_structures.md)
+
+Back to [**Module 1:** Intro to Programming with Clojure](intro.md)

@@ -1,5 +1,5 @@
-Introduction to Programming with Clojure
-========================================
+Module 1: Introduction to Programming with Clojure
+==================================================
 
 * Why Clojure?
 * What is Clojure good at?
@@ -127,7 +127,7 @@ I used integers with all of the above, but they can use floats or ratios just fi
 ```clj
 (+ 4/3 7/8)   ;=> 53/24
 (- 9 4.2 1/2) ;=> 4.3
-(* 8 1/4)     ;=> 2   ;; this produces 2N which means 2 is a BigInt. 
+(* 8 1/4)     ;=> 2   ;; this produces 2N which means 2 is a BigInt.
 (/ 27/2 1.5)  ;=> 3.0
 ```
 
@@ -179,3 +179,7 @@ Then convert that to centimeters. There are 2.54 centimeters in an inch.
 Lastly, ask two people near you for their height in centimeters. Find the average of your heights.
 
 Bonus: Convert that average back to feet and inches. `(mod x y)` will give you the remainder when dividing two numbers.
+
+### Next Step:
+
+Go on to [**Module 2:** More Simple Values](simple_values2.md)

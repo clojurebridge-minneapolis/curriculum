@@ -96,14 +96,16 @@ Add a new item in ```:require```
 
 Add a new route for rendering a form that calls a function to make the page
 ```clojure
-; add a function (Note: this must be before the defroutes section
+; add a function (Note: this must be before the defroutes section)
 (defn who []
   (page/html5
     (form/form-to [:post "/iam"]
                   [:label "Who are you?"]
                   (form/text-field "name")
                   (form/submit-button "Submit"))))
+```
 
+```clojure
 ; add a route to the defroutes section
 (GET "/who" [] (who))
 ```
@@ -114,7 +116,9 @@ View your page at http://localhost:3000/who. If you submit the form, you'll get 
 (defn iam [params]
   (page/html5
     [:div "You are " (:name params) "!"]))
+```
 
+```clojure
 ; add a route to handle the request
 (POST "/iam" {params :params} (iam params))
 ```
@@ -180,9 +184,6 @@ We can look at our params map by printing it out. Change the ```iam``` function 
 ## Post a name and message
 
 ```clojure
-; change our default route to this (be sure to not leave the old version around - it will cause problems)
-(ANY "/" {params :params} (chat (:name params) (:msg params)))
-
 ; add a chat function
 (defn chat [name msg]
   (page/html5
@@ -190,6 +191,11 @@ We can look at our params map by printing it out. Change the ```iam``` function 
     [:post "/"]
     [:div "Name:" (form/text-field "name" name) " Message:" (form/text-field "msg")]
     (form/submit-button "Submit"))))
+```
+
+```clojure
+; change our default route to this (be sure to not leave the old version around - it will cause problems)
+(ANY "/" {params :params} (chat (:name params) (:msg params)))
 ```
 
 View your app and submit a name and a message. Notice that the name is still there when you
@@ -233,7 +239,9 @@ Add some code to make Bootstrap work in your ```src/chat/handler.clj``` file:
 ; Add these two lines to use Bootstrap middleware. Put them at the top after the hiccup.form line:
 [hiccup.bootstrap.middleware :as middleware]
 [hiccup.bootstrap.page :as boot]
+```
 
+```clojure
 ; modify our chat function to use Bootstrap
 (defn chat [name msg]
   (when-not (empty? msg)
@@ -250,7 +258,9 @@ Add some code to make Bootstrap work in your ```src/chat/handler.clj``` file:
       [:post "/"]
       [:div "Name:" (form/text-field "name" name) " Message:" (form/text-field "msg")]
       (form/submit-button "Submit"))]))     ;changed
+```
 
+```clojure
 ; add the Bootstrap specific routes by wrapping our routes with them
 (def app
   (handler/site (middleware/wrap-bootstrap-resources app-routes)))

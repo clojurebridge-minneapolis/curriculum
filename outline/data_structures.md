@@ -60,7 +60,7 @@ Now, take a look at the last three functions. `count` does what you'd expect: it
 
 ### EXERCISE: Make a vector
 
-Make a vector of the average high temperatues in each month of the year in the town where you live. Then use the `nth` function to get the average high temperature for the current month from the vector.
+Make a vector of the average high temperatues in each month of the year in the town where you live. Then use the `nth` function to get the average high temperature for the current month from the vector. (Don't get bogged down in trying to find "real" temperature data – feel free to just make some numbers up. The point is to focus on Clojure vectors not get lost in finding temperature data.)
 
 ### Next Step:
 

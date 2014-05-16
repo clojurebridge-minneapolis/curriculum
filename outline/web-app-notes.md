@@ -50,7 +50,7 @@ lein ring server
 ## Say hello to yourself
 *Module 2*
 
-Open up your Chat application in LightTable. In LightTable open ```chat/src/chat.handler.clj```.
+Open up your Chat application in LightTable. In LightTable open ```chat/src/chat/handler.clj```.
 
 Change the ```(GET "/" ...``` line to say hello to yourself
 ```clojure

@@ -180,11 +180,12 @@
        :title (h3 "Returning a function")
        (hlclj
         ;;{{
-        (defn local-total-bill
-          [tax-pct]
-          (fn [subtotal]
-            (+ subtotal
-              (* tax-pct subtotal))))
+        (defn local-total-bill         ;; Define local-total-bill
+          [tax-pct]                    ;;   with one argument.
+          (fn                          ;; Create a new function
+            [subtotal]                 ;;   with one argument.
+            (+ subtotal                ;; Use both tax-pct and
+              (* tax-pct subtotal))))  ;; subtotal in the calculation.
 
         (def mpls-total-bill   (local-total-bill 0.07775))
         (def stpaul-total-bill (local-total-bill 0.07625))
@@ -199,7 +200,7 @@
        (hlclj
         ;;{{
         (defn total-bill
-          [pct subtotal]
+          [tax-pct subtotal]
           (+ subtotal
             (* tax-pct subtotal)))
 

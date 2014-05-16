@@ -21,15 +21,16 @@
     (slideshow
      :theme "mozilla-theme.css"
      (intro
-      :title "Module 2")
+      :title "Module 3")
      (chapter
       :title "Data Structures"
       (slide
        :title "Data structures"
+       (p "Numerous " (em "collections") " that allow us to store and manipulate data")
        (ul
         (li "Vectors")
         (li "Maps")
-        (li "Lists")        
+        (li "Lists")
         (li "Sets")
         (li "Sequences"))
        (p "We will only look at vectors for now."))
@@ -52,13 +53,13 @@
         ;;{{
         (vector? [5 10 15])
         ;;=> true
-      
+
         (vector 5 10 15)
         ;;=> [5 10 15]
 
         (conj [5 10] 15)
         ;;=> [5 10 15]
-        ;;}}       
+        ;;}}
         ))
       (slide
        :title "Vector functions"
@@ -66,14 +67,19 @@
         ;;{{
         (count [5 10 15])
         ;;=> 3
-      
+
         (nth [5 10 15] 1)
         ;;=> 10
-      
+
         (first [5 10 15])
         ;;=> 5
-        ;;}}       
+        ;;
+
+        (last [5 10 15])
+        ;;=> 15
+        ;;}}
         ))
       (slide
        :title "Exercise: Make a vector"
-       (p "Make a vector of the average high temperatues in each month of the year in the town where you live. Then use the " (code "nth") " function to get the average high temperature for the current month from the vector."))))))
+       (p "Make a vector of the average high temperatues in each month of the year in the town where you live. Then use the " (code "nth") " function to get the average high temperature for the current month from the vector.")
+       (p "Feel free to make up data – focus on Clojure, not finding weather data."))))))

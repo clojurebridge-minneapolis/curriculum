@@ -47,8 +47,8 @@
         (get {:first "Sally" :last "Brown"} :first)
         ;;=> "Sally"
        
-        (get {:first "Sally"} :last :MISS)
-        ;;=> :MISS
+        (get {:first "Sally"} :last :MISSING)
+        ;;=> :MISSING
         ;;}}
         ))
       (slide
@@ -92,8 +92,8 @@
         (:last {:first "Sally"})
         ;;=> nil
 
-        (:last {:first "Sally"} :MISS)
-        ;;=> :MISS
+        (:last {:first "Sally"} :MISSING)
+        ;;=> :MISSING
         ;;}}
         ))
       (slide

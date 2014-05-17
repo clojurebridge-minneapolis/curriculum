@@ -6,12 +6,39 @@ Module 4: Functions
 * Important functions
   * Collection functions
 * `map` and `reduce` - Functions that take other functions
+* `partial` and `comp` - Functions that build new functions
 
 ## What are functions?
 
 You have already seen some functions, such as `count`, `conj`, `first`, and `rest`. All the arithmetic we did had functions, as well: `+`, `-`, `*`, and `/`. What does it mean to be a function, though?
 
 A _function_ is an independent, discrete piece of code that takes in some values (called _arguments_) and returns other values. Let's see an example:
+
+```clj
+(fn [subtotal]
+  (* 1.085 subtotal))
+```
+
+This is a simple function in it's most basic form.  It takes one value, refered to as `subtotal`, and multiples by 1.085.  However, without any name or documentation, the purpose and use for this function is a little unclear.
+
+```clj
+(def total-bill
+  (fn [subtotal]
+    (* 1.085 subtotal)))
+```
+
+Here, the same function is bound to the name `total-bill`, just like we have previously done with other values.  The name makes it's purpose a little more clear.
+
+```clj
+(def total-bill
+  "Given the subtotal of a bill, return the total after tax."
+  (fn [subtotal]
+    (* 1.085 subtotal)))
+```
+
+In addition to naming the function, we can also attach a description of it's purpose to it.  Any defined name can be documented this way, and this documentation can be retrieved interactively.
+
+Since defining new functions is a prevalent aspect of writing Clojure programs, `defn` condenses how functions are declared.
 
 ```clj
 (defn total-bill
@@ -22,7 +49,7 @@ A _function_ is an independent, discrete piece of code that takes in some values
 
 In this code:
 
-* `defn` specifies that we are defining a function.
+* `defn` a contraction of def and fn that defines a named function.
 * `total-bill` is the name of this function.
 * The string on the next line is the documentation for the function, which explains what the function does. This is optional.
 * `[subtotal]` is the list of arguments. Here, we have one argument called `subtotal`.
@@ -127,6 +154,82 @@ In the example above, `reduce` calls `add` with the parameters `6.51` and `6.51`
 Create a function called `average` that takes a vector of bill amounts and returns the average of those amounts.
 
 Hint: You will need to use `reduce` and `count`.
+
+## Functions that return functions
+
+Now that we have seen functions passed like any other value as an argument to a function, we can complete the functions-as-values symmetry by returning a function from a function.
+
+```clj
+(defn local-total-bill         ;; Define local-total-bill
+  [tax-pct]                    ;;   with one argument.
+  (fn                          ;; Create a new function
+    [subtotal]                 ;;   with one argument.
+    (+ subtotal                ;; Use both tax-pct and
+      (* tax-pct subtotal))))  ;; subtotal in the calculation
+```
+
+In this code:
+
+* Define `local-total-bill`, a function with one argument: `tax-pct`.
+* `(fn ... )` is used inside of the function to create a new function.
+* The new, inner function takes one argument: `subtotal`.
+* The body of the new function uses both `subtotal` and `tax-pct` to calculate it's result.
+
+
+Here's how `local-total-bill` works:
+
+```clj
+(def mpls-total-bill   (local-total-bill 0.07775))
+(def stpaul-total-bill (local-total-bill 0.07625))
+
+(mpls-total-bill 8.5)   ;; => 9.160875
+(stpaul-total-bill 8.5) ;; => 9.148125
+```
+
+We define two new symbols `mpls-total-bill` and `stpaul-total-bill` to be the result of calling `local-total-bill` with different values for `tax-pct`.  Since `local-total-bill` returns a function, both of these names are now bound to functions, and each function holds onto the value of `tax-pct` that was present when it was created.
+
+When the two new functions are called with a `subtotal` argument, they return different results based on the value of `tax-pct` that was used to create them.
+
+### `partial`: Partial function arguments
+
+The `partial` function is a general purpose version of our `local-total-bill` function.  When given a function `f` and a series of values, it will return a new function `g` that will call `f` with the previously provided arguments followed by the arguments passed to `g`.  This may sound confusing, but is easy to illustrate.
+
+```clj
+(defn total-bill
+  [tax-pct subtotal]
+  (+ subtotal
+    (* tax-pct subtotal)))
+
+(def mpls-total-bill   (partial total-bill 0.07775))
+(def stpaul-total-bill (partial total-bill 0.07625))
+
+(mpls-total-bill 8.5)   ;; => 9.160875
+(stpaul-total-bill 8.5) ;; => 9.148125
+```
+
+In this code, we define a new version of `total-bill` that takes two arguments a `tax-pct` and a `subtotal`.  Using `partial` we create two functions with distinct values that will be used for the `tax-pct` argument.  Calling the `mpls-total-bill` function with a value of `8.5` is translated into a call to `total-bill` with arguments of `0.07775` and `8.5`.
+
+
+### Composing functions with `comp`
+
+An even more fundamental function building function is `comp`.  With `comp` we can compose a new function that applies each of a series of fuctions to the result of the previous function.  Once again, this can be easier to demonstrate than to explain.
+
+```clj
+(defn f [s] (str "F(" s ")"))
+(defn g [s] (str "G(" s ")"))
+
+(f "functional")   ;; => "F(functional)"
+(g "composition")  ;; => "G(composition)"
+
+(def f-o-g (comp f g))
+(f-o-g "Clojure")  ;; => "F(G(Clojure))"
+
+(f (g "Clojure"))  ;; => "F(G(Clojure))"
+```
+
+In the code above, we start be defining two seed functions, `f` and `g`.  Both of the functions return a string that wraps the argument `s` in a distinct label.  A third function `f-o-g` is created from `f` and `g` using `comp`.  When a value is pased to `f-o-g` the result shows that first `g` was called, because `G(...)` is the innermost wrapper, and the result of `(g "Clojure")` is passed to `f` producing `F(G(Clojure))`.  This is the same as the result of writing `(f (g "Clojure"))`.
+
+
 
 ### Next Step:
 

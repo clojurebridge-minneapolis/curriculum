@@ -7,7 +7,7 @@ What the heck is a koan?
 
 How does this relate to learning clojure?
   
-  - Clojure Koans are short fill-in-the blank Clojure expressions that test your knowledge of Clojure and help you to learn
+  - Clojure Koans are short fill-in-the blank Clojure expressions that test your knowledge of Clojure and help you to learn!
 
 Where do I get them?
 

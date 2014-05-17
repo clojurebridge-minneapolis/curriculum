@@ -3,7 +3,7 @@ Lightning Talk: clojurekoans
 
 What the heck is a koan?
 
-  - A kōan (公案) is a story, dialogue, question, or statement, which is used in Zen-practice to provoke the "great doubt", and test a student's progress in Zen practice.
+  - A kōan is a story, dialogue, question, or statement, which is used in Zen-practice to provoke the "great doubt", and test a student's progress in Zen practice.
 
 How does this relate to learning clojure?
   
@@ -18,8 +18,9 @@ Where do I get them?
 How do I run them?
 
   - From the 'koans' directory, 
+        
         $ lein koan run
-  - Then edit the current Clojure file, and when you save it, the Clojure Koans runner will pick up your chages!
+  - Then edit the file the runner is currently "meditating on" and when you save it, the Clojure Koans runner will pick up your changes!
 
 ![Koans 1](img/koans1.png)
 

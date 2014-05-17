@@ -21,9 +21,14 @@ How do I run them?
         $ lein koan run
   - Then edit the current Clojure file, and when you save it, the Clojure Koans runner will pick up your chages!
 
-![Alt text](/path/to/img.jpg)
+![Koans 1](img/koans1.png)
 
-![Alt text](/path/to/img.jpg)
+![Koans 2](img/koans2.png)
+
+![Koans 3](img/koans3.png)
+
+
+
 
 ### Back
 

@@ -6,9 +6,11 @@ Lightning Talk: Parallelism
 * We're not good at writing parallel & distributed code (correctly)
 * Functional languages like Clojure make it easier to write correct parallel programs
 
+One approach,usually taken by operating system designers, assumes that the programmer is an all-knowing genius who makes no mistakes. The other approach, usually taken by database design- ers, assumes that the programmer is a mere mortal, so it provides strong automatic support for coordination correctness, but at some cost in flexibility. - Saltzer and Kaashoek, _Principles of Computer System Design_
+
 Imagine we want to count how many page loads there are to the amazing web app that we're building.
 
-We might count visits with something like `visits := visits + 1`. Under the covers this typically works as three separate step:
+We might count visits with something like `visits := visits + 1`. Under the covers this typically works as three separate steps:
 * Read the value of `visits`
 * Add 1 to that value
 * Write the new value back to `visits`

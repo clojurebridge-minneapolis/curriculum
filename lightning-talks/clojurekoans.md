@@ -3,7 +3,7 @@ Lightning Talk: clojurekoans
 
 What the heck is a koan?
 
-  - A kōan is a story, dialogue, question, or statement, which is used in Zen-practice to provoke the "great doubt", and test a student's progress in Zen practice.
+  - A koan is a story, dialogue, question, or statement, which is used in Zen-practice to provoke the "great doubt", and test a student's progress in Zen practice.
 
 How does this relate to learning clojure?
   

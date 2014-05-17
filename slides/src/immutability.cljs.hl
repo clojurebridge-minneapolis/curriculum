@@ -1,0 +1,169 @@
+(page "immutability.html"
+      (:require [hoplon.reveal :refer [slideshow intro bullet chapter slide
+                                       notes highlight column quicklist]]
+                [tailrecursion.hoplon.reload :refer [reload-all]]))
+
+(when (= (-> js/window .-location .-search) "?dev")
+  (print "Autoreloading")
+  (reload-all))
+
+(defn code-list
+  [& lst]
+  (interpose ", " (map code lst)))
+
+(defelem hlclj
+  [attrs children]
+  (highlight (assoc attrs :class "clojure") children))
+
+(html
+  (head)
+  (body
+    (slideshow :theme "mozilla-theme.css"
+      (intro :title "Immutability")
+      (chapter :title "Definitions"
+        (slide :title "Mutable"
+          (ol (li "Prone to change")
+              (li (ol :style "list-style-type: lower-alpha;"
+                      (li "Capable of change or of being changed")
+                      (li "Capable of or liable to mutation")))))
+
+        (slide :title "Immutable"
+          (ol (li "Unable to be changed")))
+
+        (slide :title "Synonyms"
+          (div :align "left"
+            (dl
+              (dt (b "Mutable:"))
+              (dd "capricious, fickle, fluctuating, fluid, inconsistent, inconstant, temperamental, uncertain, unpredictable, unsettled, unstable, volatile" (br)
+                  "... and most importantly: " (b "variable"))
+              (br)(br)
+              (dt (b "Immutable:"))
+              (dd "certain, changeless, hard-and-fast, predictable, stable" (br)
+                  "... in other words: facts or values"))))
+
+        (slide :title "What immutable values look like"
+          "All Clojure data types are immutable by default."
+          (ul (li "Numbers: " (code-list " 23" " 4.2" " 1/3"))
+              (li "Strings: " (code "\"Hello World!\""))
+              (li "Collections: " (code "[3 1 4 1 5 9]"))
+              (li "Maps: " (code "{:event \"ClojureBridge\", "
+                                 " :location \"DevJam Studios\", "
+                                 " :date \"2014-05-17\"}"))))
+
+        (slide :title "Limitations of using values" (br)
+          "Values cannot be modified, only created and abandoned." (br) (br)
+          (ul (li "Human: How do I manipulate data that doesn't change?")
+              (li "Technical: Performance penalty of creating and discarding intermediate "
+                  "values while building up a desired result.")))
+
+        (slide :title "Benefits of using values" (br)
+          (b "Values cannot be modified, only created and abandoned!") (br) (br)
+          (ul (li "Because a value cannot be modified, it can be passed throughout your code without "
+                  "concern for hidden changes or concurrent modifications.")
+              (li "New values can be created declaratively or as transformations of existing values.")
+              (li "No need for defensive copying.")
+              (li "No problems of concurrent changes in multi-threaded applications.")))
+
+        (slide :title "Values vs. Variables"
+          (table
+            (tr (th "") (th "Values") (th "Variables"))
+            (tr (td "Represent")
+                (td "A piece or collection of information")
+                (td "A location in the computer's memory"))
+            (tr (td "Creating")
+                (td "New values are created declaratively or by transforming existing values")
+                (td "The program allocates a suitable chunk of memory"))
+            (tr (td "Using")
+                (td "Can be retained, shared, read, and re-read without any special precautions")
+                (td "Can be read from and written to by any part of the program they have been shared with"))
+            (tr (td "Tangible Examples")
+                (td "Photographs")
+                (td "Live Video"))))
+
+       (slide :title "Comparison: Maps"
+         (div :align "left"
+           "Clojure"
+           (hlclj
+           ;;{{
+             (let [ original { 1 "one", 2 "two" } ]
+               (doSomething original))
+           ;;}}
+           )
+           "Java"
+           (highlight "Map original = new HashMap();\n"
+                      "original.put( 1, \"one\" );\n"
+                      "original.put( 2, \"two\" );\n"
+                      "\n"
+                      "doSomething( original );"))
+         (ul (li "What is the value of " (code "original") " after " (code "doSomething") " completes?")
+             (li "Assuming the Java " (code "doSomething") " does mutate it's argument, what would happen "
+                 "if an immutable implementation of Map was used instead?")))
+
+         (slide :title "But it's the same computer..."
+           (ul (li "Both values and variables 'exist' simultaneously on the same computers "
+                   "and even in the same programming languages and applications.")
+               (li "Both are metaphors created by humans to simplify the task of "
+                   "programming complicated machines.")
+               (li "The differences arise from how we choose to use the machines."))))
+
+       (chapter :title "When things absolutely must change..."
+         (slide :title "Safe Mutation"
+           "When you do need variables, values make them safer." (br) (br)
+           (ul (li "Wrap values in mutable containers to clearly indicate the contents may change.")
+               (ul (li "Container types are: atoms, agents, refs & vars")))
+           (hlclj
+           ;;{{
+             (def odometer (atom 0))
+             ;; => #<Atom@71079dd0: 0>
+             (def history (atom []))
+             ;; => #<Atom@71079dd0: 0>"
+           ;;}}
+          ))
+
+          (slide :title "Safe Mutation"
+            "When you do need variables, values make them safer." (br) (br)
+            (ul (li "Change happens by swapping the value in the container "
+                    "for a new value.")
+                (li "Make functional changes to the value in the container, "
+                    "instead of explicitly providing a new value."))
+           (hlclj
+           ;;{{
+             (swap! odometer inc)
+             ;; => 1
+             (swap! odometer + 5)
+             ;; => 6"
+             (swap! history conj "first")
+             ;; => ["first"]
+             (swap! history conj "second")
+             ;; => ["first" "second"]
+           ;;}}
+           ))
+
+          (slide :title "Safe Mutation"
+            "When you do need variables, values make them safer." (br) (br)
+            (ul (li "Because the content of the container is a value, once the "
+                    "content has been extracted, it can be safely handled like "
+                    "any other value."
+                  (hlclj
+                  ;;{{
+                    (deref odometer)
+                    ;; => 6
+                    @odometer
+                    ;; => 6"
+                    @history
+                    ;; => ["first" "second"]
+                  ;;}}
+                  ))
+                (li "The container ensures that changes, including concurrent "
+                    "changes, happen safely without stepping on each other"))))
+
+        (chapter :title "In Summary..."
+          (slide :title "Fewer bugs, Concurrency for mortals" (br)
+            "Using stable, predictable values eliminates the hidden complexity "
+            "of capricious and tempermental variables.")
+          (slide :title "A different view" (br)
+            (ul (li "\"Should I make a copy of this?\" is a difficult question.")
+                (li "\"Will this need to change?\" is usually obvious.")))
+          (slide :title "Core Values" (br)
+            "Immutable values are at core of Clojure's design." (br)(br)
+            "... and not just an afterthought.")))))

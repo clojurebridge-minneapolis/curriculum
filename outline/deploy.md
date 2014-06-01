@@ -11,7 +11,7 @@ There are two ways you can experiment with deployment:
 
 ### You just completed Module-7 and you are building the chat app from the ground up
 
-There are a few changes we need to make since the <a href="outline/web-app-notes.md#store-and-display-messages" target="_chat">Module-7 changes to the chat app</a> to get ready for Heroku.
+There are a few changes we need to make since the <a href="web-app-notes.md#store-and-display-messages" target="_chat">Module-7 changes to the chat app</a> to get ready for Heroku.
 
 1. We need to specify a newer Leiningen version (in ```project.clj```):<br/>
    ```:min-lein-version "2.3.4"```
@@ -116,6 +116,6 @@ Yay! Your application is now live on the web!
 *FYI:* See what ```handler.clj``` looks like now by viewing the current branch
 [master](https://github.com/clojurebridge-minneapolis/chat/blob/master/src/awesome/handler.clj)
 
-### Next Step:
+### Previous Step:
 
 Back to [**Module 7:** More Functions](functions2.md)

@@ -5,6 +5,7 @@
 Your app is live. Great! But right now, it runs on your local machine only. If you want others to see and use it, you'll need to deploy it. The quickest way to deploy your app is to push it to Heroku using Git.
 
 There are two ways you can experiment with deployment:
+
 1. You just completed Module-7 and you are building the chat app from the ground up
 1. Cloning the latest chat version from github
 
@@ -12,18 +13,19 @@ There are two ways you can experiment with deployment:
 
 There are a few changes we need to make since the <a href="outline/web-app-notes.md#store-and-display-messages" target="_chat">Module-7 changes to the chat app</a> to get ready for Heroku.
 
-1. We need to specify a newer Leiningen version (in ```project.clj```):
+1. We need to specify a newer Leiningen version (in ```project.clj```):<br/>
    ```:min-lein-version "2.3.4"```
 1. We need to move the dependency on Java servlets (in ```project.clj```) from the :dev
-   profile to the general ```:dependencies``` (so it will work in ```:dev``` and ```:prod```:
+   profile to the general ```:dependencies``` (so it will work in ```:dev``` and ```:prod```):<br/>
    ```[javax.servlet/servlet-api "2.5"]```
 1. We added one more style improvement in [handler.clj](https://github.com/clojurebridge-minneapolis/chat/blob/master/src/awesome/handler.clj):
-   We wrapped the ```map``` function with this hiccup ```[:div.well (map ...)]```
-1. We need to add a file called ```Profile``` which tells Heroku how to run the application.
-   You can create this file in a terminal window like this:
+   We wrapped the ```map``` function with this hiccup:<br/>
+   ```[:div.well (map ...)]```
+1. We need to add a file called ```Procfile``` which tells Heroku how to run the application.
+   You can create this file in a terminal window like this:<br/>
    ```echo "web: lein with-profile production trampoline ring server-headless" > Procfile```
 
-The Procfile tells Heroku that:
+The **Procfile** tells Heroku that:
 * we will run a web application
 * using Leiningen and
 * run it with the production profile (that's detailed in project.clj)
@@ -33,8 +35,8 @@ The Procfile tells Heroku that:
   a web browser on Heroku -- just the server).
 
 Now the chat application is ready to go, but we need to check it into
-git so Heroku can use it. Let's create a new github repository on your
-account to store the chat application. (NOTE: While this isn't strictly necessary
+git so Heroku can use it. Let's create a new github repository
+to store the chat application. (NOTE: While this isn't strictly necessary
 to deploy to Heroku it makes it easier to transfer these skills to
 another project). Here are the steps to check the chat application into git:
 
@@ -109,11 +111,11 @@ the application (based on the instructions in Procfile).
 The ```heroku open``` will simply open the URL for your application
 in a browser window. You can also open the URL by hand: http://chat-NICKNAME.herokuapp.com/
 
+Yay! Your application is now live on the web!
+
 *FYI:* See what ```handler.clj``` looks like now by viewing the current branch
 [master](https://github.com/clojurebridge-minneapolis/chat/blob/master/src/awesome/handler.clj)
 
 ### Next Step:
-
-Yay! Your application is now live on the web!
 
 Back to [**Module 7:** More Functions](functions2.md)

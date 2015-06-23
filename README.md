@@ -1,5 +1,7 @@
 # ClojureBridge Curriculum
 
+**NOTE:** Pointers to our latest version of the curriculum can be found in the [installfest](https://github.com/clojurebridge-minneapolis/installfest) repo!
+
 ## Friday: InstallFest
 * [Getting Set Up](outline/setup.md)
 
